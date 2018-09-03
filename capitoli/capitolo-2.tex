@@ -81,7 +81,7 @@ Dopo una breve analisi e confronto tra i servizi offerti da questi provider è s
 \subsection{Amazon Web Services}
 Per l'applicazione in questione sono stati identificati specifici servizi di Amazon, che hanno permesso poi di realizzare un'archittettura serverless facilmente scalabile. In seguito è fornita una descrizione generale dei servizi scelti.
 
-\subsection{Amazon API Gateway} Amazon API Gateway è un servizio il cui scopo è quello di semplificare agli sviluppatori
+\subsection{AWS API Gateway} Amazon API Gateway è un servizio il cui scopo è quello di semplificare agli sviluppatori
 la creazione, la pubblicazione, la manutenzione, il monitoraggio e la protezione
 delle API su qualsiasi scala.
 Questo servizio permette di creare un punto d'ingresso attraverso il quale le applicazioni posso accedere ai dati. Fornisce una API per ricevere le richiesta dalle applicazioni, dopo ogni richiesta questo servizio genera un evento che esegue qualcosa(una funzione lambda, un altra chiamata ecc).
@@ -89,7 +89,47 @@ Questo servizio permette di creare un punto d'ingresso attraverso il quale le ap
 	\centering 
 	\includegraphics[width=0.2\columnwidth]{gateway}
 	\caption{Logo API Gateway}
-\end{figure} 
+\end{figure}
+
+\subsection{AWS Lambda} 
+
+Sono delle semplici funzioni che ricevano come input un evento e possono ritornare qualche valore. Possono essere scritte in molti linguaggii dprogrammazione, come Nodejs(javascript), Java, C++ e Phython. 
+\\
+
+Queste funzioni possono comunicare con qualsiasi servizio di Amazon utilizzando AWS-SDK. In questo progetto sono state utilizzate diverse funzioni di questo tipo, princiaplamente per scrivere o leggere i dati su database.
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.5\columnwidth]{lambda}
+	\caption{Logo di AWS Lambda}
+\end{figure}  
+
+\subsection{AWS DynomoDB} 
+Amazon DynamoDB è un database non relazionale che fornisce prestazioni affidabili su qualsiasi scala. Si tratta di un database multi-master, multiregione e completamente gestito che fornisce latenza costante di pochi millisecondi e sicurezza integrata, backup e ripristino e cache in memoria.
+\\
+
+ Tutti i dati degli utenti e i tempalte sono stati salvati su questo database. L'acceso a tali avviene solo tramite le funzioni lambda.   
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.3\columnwidth]{dynamo}
+	\caption{Logo di AWS DynamoDB}
+\end{figure}
+
+\subsection{AWS S3} 
+Amazon Simple Storage Service è uno storage di
+oggetti creato per memorizzare e ripristinare qualsiasi volume di dati da qualunque
+origine: siti web, applicazioni per mobile o dati provenienti da diversi dispositivi. Può
+essere utilizzato per memorizzare file multimediali ed è ideale per acquisire dati quali
+foto, video o immagini di risoluzione elevata da dispositivi mobili, backup di dispositivi
+mobile o computer.
+\\
+
+Nel contesto dello stage è stato utilizzato per garantire la persistenza di tutti i dati
+non strutturati dell’applicazione. Inoltre l'applicazione stassa è stata caricata su questo servizio.   
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.4\columnwidth]{s3}
+	\caption{Logo di AWS S3}
+\end{figure}
 \section{Framework e le API di Zendesk}
 
 \subsection{Zendesk Apps framework(ZAF)}
