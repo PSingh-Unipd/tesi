@@ -173,10 +173,48 @@ Una delle cose molto interessanti di questo editor è quello di avere Git già i
 	\includegraphics[width=0.6\columnwidth]{atom}
 	\caption{Logo di Atom}
 \end{figure}
+ 
+\section{Zendesk Apps framework(ZAF)}
+ZAF è un semplice framework sviluppato da Zendesk Inc. Permette di integrare nella piattaforma Zendesk applicazione web realizzata con qualsiasi tecnologia web. 
+\\
 
-\section{Framework e le API di Zendesk}
+Questo framework genera dei package che rappressentono un app di Zendesk.
+Take package può essere installato sulla propria piattaforma Zendesk come una applicazioen privata oppure caricata(gratuitamente oppure a pagamento) su Market place di Zendesk rendendola cosi disponibile a tutti gli utenti nel mondo. Il package è formato da due file JSON(manifest.json) e una cartella assets.La cartella contiene le icone da visualizzare dopo l'installazione dell'applllicazione sulla piattaforma, mentre il file manifest.json contiene tutte le informazioni riguardo l'applicazione. Il seguente codice mostra la struttuta generale di un semplice file manifest.json. \\
+\begin{lstlisting}
+{
+  "name": "CS-Template",
+  "author": {
+	"name": "Singh Parwinder",
+	"email": "mio@email.com",
+  },
+  "location": {
+	"ticket_sidebar":  "https://www.paginaweb.org"
+  },	
+  "parameters": [
+  {
+    "name": "token",
+	"type": "text",
+	"required": true
+  }]
+}
+\end{lstlisting}
+L'atrtibuto "location" è quello più importatnte. Questo attributo specifica dove visualizzare l'appllicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra piu di dieci possizioni differenti, e per ogni posizione speficato bisgona indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici iframe che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
+\\
 
-\subsection{Zendesk Apps framework(ZAF)}
-ZAF è un semplice framework sviluppato da Zendesk Inc. Viene utilizzato per realizzare le applicazione per la piattaforma Zendesk. Questo framework premette in manienra molto semplice di realizzare dei
+L'attributo "parameters" indica i parametri da chiedere all'utente durante l'installazione dell'applicazione sulla piattaforma. Nel contesto del applicazione è richiesto di inserire obbligatoriamente un token da 16 cifre, l'inserimento sbaglaito di tale valore comporta inutilizzo dell'applicazione CS-Template. 
 
+\subsection{ZAF Client SDK}
+Ovviamente non avrebbe senso semplcemente visualizzare le pagine web sulla piattaforma se queste non possono interagire con le funzionalità di Zendesk. 
+\\
 
+Per permettere all'applicazione web di interagire con la piattaforma Zenedesk, è reso disponibile una libreria(ZAF Client SDK) da utilizzare nella propria applicazione web. Questa libreria fornisce un oggetto speciale(ZAFClient) con una ciquantina di metodi che permettono(una volta caricata la pagina nella piattaforma) di interagire con le diverse funzionalità di Zendesk.
+\\
+ 
+Seguente codice invoca il metodo "invoke" dell'istanza "client" del oggetto ZAFClient per aggiungere testo "Hello World!" nella risposta da inviare all'utente.  
+\\
+\begin{lstlisting}
+  let client = ZAFClient.init();
+  client.invoke('ticket.comment.appendText', 'Hello world!').then(function() {
+	console.log('text has been appended');
+  });
+\end{lstlisting} 
