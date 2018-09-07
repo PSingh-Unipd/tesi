@@ -15,10 +15,10 @@ Ogni caso d’uso è definito secondo la seguente struttura:
 \begin{itemize}
 	\item Nome: Il titolo del caso d’uso;
 	\item Attori: Indica gli attori principali e secondari del caso d’uso. In tutto il contesto
-	dell’applicazione gli utenti del sistema saranno così classificati:
+	dell’applicazione gli autori del sistema saranno così classificati:
 	\begin{itemize}
-		\item Agente: sono le persone che gestiscono ed elaborano le richieste dei clienti sulla piattaforma Zendesk;
-		\item Zendesk Admin: utenti amministratori di Zendesk;
+		\item Utente Zendesk: sono gli utenti della piattaforma Zendesk. Possono essere gli agenti(persone che gestiscono le richieste dei cleinti) oppure gli amministratore di Zendesk;
+		\item Utente generico: utente qualsiasi che non ha ancora effetuato l'accesso alla pagina degli amministratori;
 		 \item Amministratore: utente amministratore Nextep, che ha compito di gestire tutti le aziende che utilizzano l'applicazione CS-Template.
 	\end{itemize}
 
@@ -46,8 +46,6 @@ Questa è la pagina web il qui scopo princiaplae è quello di visualizzare la li
 \\ 
 \\
 \begin{usecase}{2}{Pagina degli amministratori}
-
-\begin{usecase}{2}{Pagina degli amministratori}
 	
 	\usecaseactors{Nextep Admin}
 	\usecasedesc{Caso d'uno descrive le funzionalità della pagina degli amministratori di Nextep. In questa pagina è possibile gestire tutti i clienti(aziende) di Nextep che utilizzano l'applicazione CS-Template}
@@ -59,7 +57,7 @@ Questa è la pagina web il qui scopo princiaplae è quello di visualizzare la li
 		\caption{UC 2 - funzionalità pagina admin}
 	\end{figure}
 \end{usecase}
-
+\newpage
 \subsection{ Casi d'uso pagina contenente editor drag-and-drop}
 Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. In seguito è riportato un caso d'uso generico che descrive tutte le proprietà ad alto livello del editor.
 \begin{usecase}{3}{Editor drag-and-drop}
@@ -71,12 +69,30 @@ Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato succes
 	\begin{figure}[!h] 
 		\centering 
 		\includegraphics[width=1\columnwidth]{usecase/editor} 
-		\caption{UC3 - pagina login}
+		\caption{UC3 - pagina contenene l'editor}
 	\end{figure}
-	\\ 
-	\\
-
+\end{usecase}
 \newpage
+\subsection{ Casi d'uso pagina contenente widget}
+Questa pagina web contiene il widget che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. Il widget verrà mostrato quando verrà aperto una richeista qualsiasi del cliente. Esso permette di scegliere da una lista il contenuto HTML e CSS da utilizzare come risposta verso il cliente. 
+\begin{usecase}{4}{Widget dei template}
+	
+	\usecaseactors{Utente Zendesk}
+	\usecasedesc{Caso d'uso descrive tutte le funzionalità ad alto livello che il widget dovrà fornire}
+	\usecasepre{L'utente Zendesk apre il widget}
+	\usecasepost{Utente Zendesk sceglie il template da inviare come risposta al cliente}
+	\begin{figure}[!h] 
+		\centering 
+		\includegraphics[width=1.2\columnwidth]{usecase/widget} 
+		\caption{UC3 - pagina contenente il widget}
+	\end{figure}
+\\
+\\
+\\
+\\
+\\
+\end{usecase}
+
 \section{Tracciamento dei requisiti}
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
@@ -85,16 +101,13 @@ Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
 \begin{enumerate}
 	\item[R =] requisito
     \item[F =] funzionale
-    \item[Q =] qualitativo
-    \item[V =] di vincolo
     \item[N =] obbligatorio (necessario)
     \item[D =] desiderabile
     \item[Z =] opzionale
 \end{enumerate}
-Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
 
-\newpage
-
+Nelle tabelle \ref{tab:requisiti-funzionali} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
+\\
 \begin{table}%
 \caption{Tabella del tracciamento dei requisti funzionali}
 \label{tab:requisiti-funzionali}
@@ -102,19 +115,31 @@ Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e 
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
+RFN-1   & Personale di Nextep può effetuare il login nella pagina degli amministraori & UC1 \\
 \hline
-\end{tabularx}
-\end{table}%
-
-\begin{table}%
-\caption{Tabella del tracciamento dei requisiti qualitativi}
-\label{tab:requisiti-qualitativi}
-\begin{tabularx}{\textwidth}{lXl}
-\hline\hline
-\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
+RFN-2   & Nextep Admin può ottenere una lista con tutte le informazioni dei clienti che utilizzano l'applicazione CS-Template & UC2 \\
 \hline
-RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
+RFN-3   & Nextep Admin può eliminare un cliente dalla lista & UC2 \\
+\hline
+RFN-4   & Nextep Admin può aggiungere un nuovo cliente nella lista & UC2 \\
+\hline
+RFN-4   & Utenet Zendesk può utilizzare l'editor drag-and-drop & UC3 \\
+\hline
+RFN-5   & Utenet Zendesk può creare nuovi template & UC3 \\
+\hline
+RFN-6   & Utenet Zendesk può salvare il template creato & UC3 \\
+\hline
+RFN-7   & Utenet Zendesk può eliminare template creati & UC3 \\
+\hline
+RFN-8   & Utenet Zendesk può azzerrare il contenuto del editor & UC3 \\
+\hline
+RFN-10   & Utenet Zendesk può impostare il nome del template & UC3 \\
+\hline
+RFN-11   & Utenet Zendesk può utilizzare il temaplte creato nella risposta verso il cliente & UC4 \\
+\hline
+RFD-12   & Utenet Zendesk può esportare tutto i template creati in un file json come backup & UC4 \\
+\hline
+RFD-13   & Utenet Zendesk può importare i template da un file json precedentemente creato & UC4 \\
 \hline
 \end{tabularx}
 \end{table}%
@@ -126,7 +151,12 @@ RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecu
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
+RVO-1    & Il backend dell'applicazioend deve essere realizzato utilizzando gli servizi cloud & - \\
+\hline
+RVO-2    & L'applicazione deve essere utilizzabile solo dai clienti aggiunti da Nextep, implementando un sistema d' accesso tramite il token & - \\
+\hline
+RVO-3    & L’intero progetto deve essere accompagnato da
+documentazione completa & - \\
 \hline
 \end{tabularx}
 \end{table}%
