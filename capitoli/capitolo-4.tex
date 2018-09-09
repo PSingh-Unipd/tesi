@@ -5,7 +5,7 @@
 %**************************************************************
 \chapter{Analisi dei requisiti}
 \label{cap:analisi-requisiti}
-Il presente capitolo ha come scopo fornire una descrizione completa e precisadi tutti i requisitiG individuati e dei casi d’uso ad alto livello riguardanti il progetto CS-Template.
+Il presente capitolo ha come scopo quello di fornire una descrizione completa e precisa di tutti i requisitiG individuati e dei casi d’uso ad alto livello riguardanti il progetto CS-Template.
 
 \section{Casi d'uso}
 
@@ -18,7 +18,7 @@ Ogni caso d’uso è definito secondo la seguente struttura:
 	dell’applicazione gli autori del sistema saranno così classificati:
 	\begin{itemize}
 		\item Utente Zendesk: sono gli utenti della piattaforma Zendesk. Possono essere gli agenti(persone che gestiscono le richieste dei cleinti) oppure gli amministratore di Zendesk;
-		\item Utente generico: utente qualsiasi che non ha ancora effetuato l'accesso alla pagina degli amministratori;
+		\item Utente generico: utente qualsiasi che non ha ancora effettuato l'accesso alla pagina degli amministratori;
 		 \item Amministratore: utente amministratore Nextep, che ha compito di gestire tutti le aziende che utilizzano l'applicazione CS-Template.
 	\end{itemize}
 
@@ -31,11 +31,11 @@ Ogni caso d’uso è definito secondo la seguente struttura:
 \end{itemize}
 
 \subsection{ Casi d'uso pagina degli amministratori}
-Questa è la pagina web il qui scopo princiaplae è quello di visualizzare la lista di tutti i clienti di Nextep che hanno l'applicazione CS-Template installata sulla propria piattaforma Zendesk. Inoltre permette di aggiungerne dei nuovi. L'accesso a questa pagina è garantita solo agli uenti amministratori di Nextep con le credenziali valide.
+Questa è la pagina web il cui scopo principale è quello di visualizzare la lista di tutti i clienti di Nextep che hanno l'applicazione CS-Template installata sulla propria piattaforma Zendesk. Inoltre permette di aggiungerne dei nuovi. L'accesso a questa pagina è garantita solo agli uenti amministratori di Nextep con le credenziali valide.
 \begin{usecase}{1}{Login pagina amministratori}
 
 	\usecaseactors{Utente generico}
-	\usecasedesc{Caso d'uno descrive login alla pagina degli amministratori. }
+	\usecasedesc{Caso d'uso descrive login alla pagina degli amministratori. }
 	\usecasepre{L'utente non autenticato}
 	\usecasepost{Il sistema riconosce l'utente amministratore}
 		\begin{figure}[!h] 
@@ -50,7 +50,7 @@ Questa è la pagina web il qui scopo princiaplae è quello di visualizzare la li
 	\usecaseactors{Nextep Admin}
 	\usecasedesc{Caso d'uno descrive le funzionalità della pagina degli amministratori di Nextep. In questa pagina è possibile gestire tutti i clienti(aziende) di Nextep che utilizzano l'applicazione CS-Template}
 	\usecasepre{Il sistema riconosce l'amministratore}
-	\usecasepost{L’amministratore visualizza una lista di tutti i clienti(utilizzatori di CS-Template) registrati  nel  sistema,  visualizzando  per  ognuno  di  essi tutte le   informazioni  e un form per aggiungerne uno nuovoi}
+	\usecasepost{L’amministratore visualizza una lista di tutti i clienti(utilizzatori di CS-Template) registrati  nel  sistema,  visualizzando  per  ognuno  di  essi tutte le   informazioni  e un form per aggiungerne uno nuovo}
 	\begin{figure}[!h] 
 		\centering 
 		\includegraphics[width=1\columnwidth]{usecase/paginaAdmin} 
@@ -58,12 +58,12 @@ Questa è la pagina web il qui scopo princiaplae è quello di visualizzare la li
 	\end{figure}
 \end{usecase}
 \newpage
-\subsection{ Casi d'uso pagina contenente editor drag-and-drop}
-Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. In seguito è riportato un caso d'uso generico che descrive tutte le proprietà ad alto livello del editor.
+\subsection{ Casi d'uso pagina contenente l'editor drag-and-drop}
+Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. In seguito è riportato un caso d'uso generico che descrive tutte le proprietà ad alto livello dell'editor.
 \begin{usecase}{3}{Editor drag-and-drop}
 	
 	\usecaseactors{Utente Zendesk}
-	\usecasedesc{Caso d'uso descrive tutte le funzionalità ad oalto livello che l'editor dovrà fornire}
+	\usecasedesc{Caso d'uso descrive tutte le funzionalità ad alto livello che l'editor dovrà fornire}
 	\usecasepre{L'utente Zendesk apre l'editor}
 	\usecasepost{L'editor permette all'utente Zendesk di realizzare qualsiasi tipo di contentuto HTML e CSS}
 	\begin{figure}[!h] 
@@ -73,7 +73,7 @@ Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato succes
 	\end{figure}
 \end{usecase}
 \newpage
-\subsection{ Casi d'uso pagina contenente widget}
+\subsection{ Casi d'uso pagina contenente il widget}
 Questa pagina web contiene il widget che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. Il widget verrà mostrato quando verrà aperto una richeista qualsiasi del cliente. Esso permette di scegliere da una lista il contenuto HTML e CSS da utilizzare come risposta verso il cliente. 
 \begin{usecase}{4}{Widget dei template}
 	
@@ -123,23 +123,23 @@ RFN-3   & Nextep Admin può eliminare un cliente dalla lista & UC2 \\
 \hline
 RFN-4   & Nextep Admin può aggiungere un nuovo cliente nella lista & UC2 \\
 \hline
-RFN-4   & Utenet Zendesk può utilizzare l'editor drag-and-drop & UC3 \\
+RFN-4   & Utente Zendesk può utilizzare l'editor drag-and-drop & UC3 \\
 \hline
-RFN-5   & Utenet Zendesk può creare nuovi template & UC3 \\
+RFN-5   & Utente Zendesk può creare nuovi template & UC3 \\
 \hline
-RFN-6   & Utenet Zendesk può salvare il template creato & UC3 \\
+RFN-6   & Utente Zendesk può salvare il template creato & UC3 \\
 \hline
-RFN-7   & Utenet Zendesk può eliminare template creati & UC3 \\
+RFN-7   & Utente Zendesk può eliminare template creati & UC3 \\
 \hline
-RFN-8   & Utenet Zendesk può azzerrare il contenuto del editor & UC3 \\
+RFN-8   & Utente Zendesk può azzerrare il contenuto del editor & UC3 \\
 \hline
-RFN-10   & Utenet Zendesk può impostare il nome del template & UC3 \\
+RFN-10   & Utente Zendesk può impostare il nome del template & UC3 \\
 \hline
-RFN-11   & Utenet Zendesk può utilizzare il temaplte creato nella risposta verso il cliente & UC4 \\
+RFN-11   & Utente Zendesk può utilizzare il temaplte creato nella risposta verso il cliente & UC4 \\
 \hline
-RFD-12   & Utenet Zendesk può esportare tutto i template creati in un file json come backup & UC4 \\
+RFD-12   & Utente Zendesk può esportare tutto i template creati in un file json come backup & UC4 \\
 \hline
-RFD-13   & Utenet Zendesk può importare i template da un file json precedentemente creato & UC4 \\
+RFD-13   & Utente Zendesk può importare i template da un file json precedentemente creato & UC4 \\
 \hline
 \end{tabularx}
 \end{table}%

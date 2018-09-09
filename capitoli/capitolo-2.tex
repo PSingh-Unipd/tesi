@@ -72,7 +72,7 @@ Per quanto riguarda il lato Backend è stato deciso di utilizzare il cloud compu
 Le società che offrono questi servizi di calcolo sono dette provider di servizi cloud e in genere addebitano un costo per i servizi di cloud computing in base all'utilizzo(on demand). I provider più famosi oggigiorno sono Amazon, Microsoft e Google. 
 \\
 
-Dopo una breve analisi e confronto tra i servizi offerti da questi provider è stato deciso di utilizzare i servizi offerti da Amazon, ovvero gli AWS. La scelta è stata fatta soprattutto per la popolarità dei servizi Amazon, essendo Amazon primo a fornire questo tipo di servizio sono attualmente molto più utilizzati rispetto gli altri due. Per quanto riguarda i prezzi, quantità e qualità di servizi offerti da tuti i provider non è stato trovato un rilevante differenza. 
+Dopo una breve analisi e confronto tra i servizi offerti da questi provider è stato deciso di utilizzare i servizi offerti da Amazon, ovvero gli AWS. La scelta è stata fatta soprattutto per la popolarità dei servizi Amazon: essendo Amazon il primo a fornire questo tipo di servizi, questi sono attualmente molto più utilizzati rispetto gli altri due. Per quanto riguarda i prezzi, quantità e qualità di servizi offerti da tutti i provider non è stato trovato un rilevante differenza. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.6\columnwidth]{ccaws}
@@ -93,7 +93,7 @@ Questo servizio permette di creare un punto d'ingresso attraverso il quale le ap
 
 \subsection{AWS Lambda} 
 
-Sono delle semplici funzioni che ricevano come input un evento e possono ritornare qualche valore. Possono essere scritte in molti linguaggi di programmazione, come Nodejs(javascript), Java, C++ e Phython. 
+Sono delle semplici funzioni che ricevono come input un evento e possono ritornare qualche valore. Possono essere scritte in molti linguaggi di programmazione, come Nodejs(javascript), Java, C++ e Phython. 
 \\
 
 Queste funzioni possono comunicare con qualsiasi servizio di Amazon utilizzando AWS-SDK. In questo progetto sono state utilizzate diverse funzioni di questo tipo, principalmente per scrivere o leggere i dati su database.
@@ -124,7 +124,7 @@ mobile o computer.
 \\
 
 Nel contesto dello stage è stato utilizzato per garantire la persistenza di tutti i dati
-non strutturati dell’applicazione. Inoltre l'applicazione stassa è stata caricata su questo servizio.   
+non strutturati dell’applicazione. Inoltre l'applicazione stessa è stata caricata su questo servizio.   
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{s3}
@@ -184,7 +184,7 @@ ZAF è un semplice framework sviluppato da Zendesk Inc. Permette di integrare ne
 \\
 
 Questo framework genera dei package che rappresentano un app di Zendesk.
-Take package può essere installato sulla propria piattaforma Zendesk come una applicazioen privata oppure caricata(gratuitamente oppure a pagamento) su Market place di Zendesk rendendola cosi disponibile a tutti gli utenti nel mondo. Il package è formato da due file JSON(manifest.json) e una cartella assets. La cartella contiene le icone da visualizzare dopo l'installazione dell'applicazione sulla piattaforma, mentre il file manifest.json contiene tutte le informazioni riguardo l'applicazione. Il seguente codice mostra la struttura generale di un semplice file manifest.json. \\
+Take package può essere installato sulla propria piattaforma Zendesk come una applicazione privata oppure caricata(gratuitamente o a pagamento) sul Market place di Zendesk rendendola cosi disponibile a tutti gli utenti nel mondo. Il package è formato da un file JSON(manifest.json) e una cartella assets. La cartella contiene le icone da visualizzare dopo l'installazione dell'applicazione sulla piattaforma, mentre il file manifest.json contiene tutte le informazioni riguardo l'applicazione. Il seguente codice mostra la struttura generale di un semplice file manifest.json. \\
 \begin{lstlisting}
 {
   "name": "CS-Template",
@@ -203,19 +203,19 @@ Take package può essere installato sulla propria piattaforma Zendesk come una a
   }]
 }
 \end{lstlisting}
-L'atrtibuto "location" è quello più importante. Questo attributo specifica dove visualizzare l'applicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra più di dieci posizioni differenti, e per ogni posizione specificato bisogna indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici iframe che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
+L'attributo "location" è quello più importante. Questo attributo specifica dove visualizzare l'applicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra più di dieci posizioni differenti, e per ogni posizione specificata bisogna indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici iframe che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
 \\
 
-L'attributo "parameters" indica i parametri da chiedere all'utente durante l'installazione dell'applicazione sulla piattaforma. Nel contesto del applicazione è richiesto di inserire obbligatoriamente un token da 16 cifre, l'inserimento sbagliato di tale valore comporta inutilizzo dell'applicazione CS-Template. 
+L'attributo "parameters" indica i parametri da chiedere all'utente durante l'installazione dell'applicazione sulla piattaforma. Nel contesto dell'applicazione è richiesto di inserire obbligatoriamente un token da 16 cifre, l'inserimento sbagliato di tale valore comporta inutilizzo dell'applicazione CS-Template. 
 
 \subsection{ZAF Client SDK}
 Ovviamente non avrebbe senso semplicemente visualizzare le pagine web sulla piattaforma se queste non possono interagire con le funzionalità di Zendesk. 
 \\
 
-Per permettere all'applicazione web di interagire con la piattaforma Zenedesk, è reso disponibile una libreria(ZAF Client SDK) da utilizzare nella propria applicazione web. Questa libreria fornisce un oggetto speciale(ZAFClient) con una cinquantina di metodi che permettono(una volta caricata la pagina nella piattaforma) di interagire con le diverse funzionalità di Zendesk.
+Per permettere all'applicazione web di interagire con la piattaforma Zenedesk, è resa disponibile una libreria(ZAF Client SDK) da utilizzare nella propria applicazione web. Questa libreria fornisce un oggetto speciale(ZAFClient) con una cinquantina di metodi che permettono(una volta caricata la pagina nella piattaforma) di interagire con le diverse funzionalità di Zendesk.
 \\
  
-Seguente codice invoca il metodo "invoke" dell'istanza "client" del oggetto ZAFClient per aggiungere testo "Hello World!" nella risposta da inviare all'utente.  
+Il seguente codice invoca il metodo "invoke" dell'istanza "client" dell'oggetto ZAFClient per aggiungere il testo "Hello World!" nella risposta da inviare all'utente.  
 \\
 \begin{lstlisting}
   let client = ZAFClient.init();
