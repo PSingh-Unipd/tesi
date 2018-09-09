@@ -71,16 +71,19 @@ Essendo un'unica applicazione che contiene sia le pagine degli amministratore di
 	\\
 \end{itemize}
 \subsection{PluginPages}
-Essendo un'unica applicazione che contiene sia le pagine degli amministratore di Nextep che le pagine dell'applicazione, si è pensato quindi una struttura illustrata nel seguente diagramma.
+Contiene tutti i componenti e servizi per realizzare le pagine contenente l'editor e il widget.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.8\columnwidth]{prog/pluginpages} 
 	\caption{Struttura applicazione}
 \end{figure}
 \begin{itemize}
-	\item \textbf{AdminPages:} contiente tutti i componenti e i servizi che vanno a formare le pagine(login e di amministratori) per gli utenti di Nextep;
-	\item \textbf{PluginPages:} contiene tutti i componenti e i servizi per la pagine contenente l'editor e la pagina contenente il widget;
-	\item \textbf{Routes:} contiene tutto il codice per gestione della navgazione dell'applicazione.
+	\item \textbf{ComponentsServices:} contiente tutti i servizi che permettono di scambiare i dati tri componenti locali;
+	\item \textbf{RemoteServices:} contiene tutti i servizi utilizzati per communicare con il lato backend dell'applicazione. Quindi principalmente per leggere, aggiungere o rimuovere i tempalte dal database su AWS;
+	\item \textbf{Objects:} contiene tutti i tipi creati per rappresentare diversi tipi di dati;
+	\item \textbf{Editor:} contiene tutti i componenti Angular che formano la pagine contenente l'editor;
+	\item \textbf{Widget:} contiene tutti i componenti Angular che formano la pagina contenente il widget;
+	\item \textbf{Pipes:} contiene le pipes di  Angular.
 \end{itemize}
 \newpage
 \subsection{AdminPages}
@@ -95,7 +98,6 @@ Essendo un'unica applicazione che contiene sia le pagine degli amministratore di
 	\item \textbf{PluginPages:} contiene tutti i componenti e i servizi per la pagine contenente l'editor e la pagina contenente il widget;
 	\item \textbf{Routes:} contiene tutto il codice per gestione della navgazione dell'applicazione.
 \end{itemize}
-\newpage
 \subsection{Atomic design}
 Per realizzare le diverse pagine dell'applicazione è stato utilizzato il concetto di Atomic Design.
 Creata da Brad Frost nel 2013, l'Atomic design è una metodologia composta da 5 differenti fasi, utile per creare un sistema di interfacce in maniera gerarchica. In questa metologia si parte dai componenti piu basilari possibili, fino ad arrivare alle pagine finali. Quindi è un approccio bottom-up.
