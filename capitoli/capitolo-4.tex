@@ -10,7 +10,7 @@ Il presente capitolo ha come scopo quello di fornire una descrizione completa e 
 \section{Casi d'uso}
 
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
+I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{UML} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 Ogni caso d’uso è definito secondo la seguente struttura:
 \begin{itemize}
 	\item Nome: Il titolo del caso d’uso;
@@ -97,13 +97,13 @@ Questa pagina web contiene il widget che verrà visualizzato successivamente nel
 
 Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
 Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
+Il codice dei requisiti è così strutturato R(F/V)(N/D) dove:
 \begin{enumerate}
 	\item[R =] requisito
     \item[F =] funzionale
+    \item[V =] vincolo
     \item[N =] obbligatorio (necessario)
     \item[D =] desiderabile
-    \item[Z =] opzionale
 \end{enumerate}
 
 Nelle tabelle \ref{tab:requisiti-funzionali} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
@@ -151,11 +151,11 @@ RFD-13   & Utente Zendesk può importare i template da un file json precedenteme
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RVO-1    & Il backend dell'applicazioend deve essere realizzato utilizzando gli servizi cloud & - \\
+RVN-1    & Il backend dell'applicazioend deve essere realizzato utilizzando gli servizi cloud & - \\
 \hline
-RVO-2    & L'applicazione deve essere utilizzabile solo dai clienti aggiunti da Nextep, implementando un sistema d' accesso tramite il token & - \\
+RVN-2    & L'applicazione deve essere utilizzabile solo dai clienti aggiunti da Nextep, implementando un sistema d' accesso tramite il token & - \\
 \hline
-RVO-3    & L’intero progetto deve essere accompagnato da
+RVN-3    & L’intero progetto deve essere accompagnato da
 documentazione completa & - \\
 \hline
 \end{tabularx}
