@@ -35,6 +35,6 @@ RxJS (Reactive Extensions for JavaScript) è una libreria di reactive programmin
 	\caption{Logo di Angular e RxJS}
 \end{figure}
 
-Questa libreria permette di implementare molto facilmente il design pattern Observer. Permette di trasformare qualsiasi tipo di Typescript in un Subject, ovvero qualcosa che può essere osservato da molti osservatori. Quando un subject cambia nel tempo automaticamente tutti gli oservatori vengono avvisati del suo cambiamento. 
+Questa libreria permette di implementare molto facilmente il design pattern Observer. Permette di trasformare qualsiasi tipo di Typescript in un Subject, ovvero qualcosa che può essere osservato da molti osservatori. Quando un Subject cambia nel tempo automaticamente tutti gli osservatori vengono avvisati del suo cambiamento. 
 
-Nel contesto dell'applicazione i subkects sono utilizzanti nei  RemoteServices(capitolo 4) che sono dei servizi per le chiamate asincrone. I componenti si mettono in ascolto facendo subscribe a un oggetto subject, appena la chimata asincrona ritorna i dati il subject si aggiorna e di conseguenza anche i componenti che lo stavano osservando, aggiornando cosi la view in modo reattivo. 
+Nel contesto dell'applicazione i Subjects sono utilizzanti nei  RemoteServices(capitolo 4) che sono dei servizi per le chiamate asincrone. I componenti si mettono in ascolto facendo subscribe a un oggetto Subject, appena la chiamata asincrona ritorna i dati il Subject si aggiorna e di conseguenza anche i componenti che lo stavano osservando, aggiornando cosi la view in modo reattivo. 

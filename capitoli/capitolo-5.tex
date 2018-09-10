@@ -11,9 +11,9 @@ In questo capitolo vengono illustrate le strategie di progettazione adottate per
 
 \section{Progettazione Frontend}
 \label{sec:progettazione}
-Come prima cosa sono stati realizzati utilizzando Figma i prototipi delle pagine da creare. In questo modo è stato possibile capire sin da subito la struttura delle pagine, rendendo cosi molto semplice la progettazione architetturale di tali pagine.
+Come prima cosa sono stati realizzati utilizzando Figma i prototipi delle pagine da creare. In questo modo è stato possibile capire sin da subito la struttura delle pagine, rendendo cosi molto semplice la progettazione architetturale di tale pagine.
 \subsection{Pagina cotenente l'editor}
-Questa pagina contiene l'editor drag and drop. Per creare la struttura di questa pagina sono stati studiati diversi editor online che forniscono le stesse funzionalità(in diversi contesti). Dopo una attenta analisi delle strutture dei diversi editor online è stato concepita la seguente struttura:
+Questa pagina contiene l'editor \emph{drag and drop}. Per creare la struttura di questa pagina sono stati studiati diversi editor online che forniscono le stesse funzionalità(in diversi contesti). Dopo una attenta analisi delle strutture dei diversi editor online è stato concepita la seguente struttura:
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.9\columnwidth]{mock/mockeditor} 
@@ -23,21 +23,21 @@ Questa pagina contiene l'editor drag and drop. Per creare la struttura di questa
 \begin{itemize}
 	\item Il primo contenitore in alto a sinistra dovrà contenere tutti i componenti trascinabili. Ogni elemento rappresenta uno specifico tipo di oggetto HTML e CSS, come ad esempio il testo, banner, titolo, immagine ecc;
 	\item Il secondo contenitore a sinistra contiene tutte le proprietà modificabili per ogni elemento;
-	\item Il contenitore in centro rappresenta la zona dove tutti gli elementi vengono trascinati. In questo contenitore viene visualizzato a schermo il contenuto HTML e CSS contenuto in ogni elemento. Inoltre dovrà essere possibile modificare tale contenuto ed eliminare un elemento se necessario;
+	\item Il contenitore in centro(container) rappresenta la zona dove tutti gli elementi vengono trascinati. In questo contenitore viene visualizzato a schermo il contenuto HTML e CSS di ogni elemento trascinato. Inoltre dovrà essere possibile modificare tale contenuto ed eliminare un elemento se necessario;
 	\item Il contenitore a destra dovrà contenere tutti i template realizzati dagli utenti. Quindi esso contiene semplicemente una lista di tutti i template.  
 \end{itemize}
 
-\subsection{Pagina contenente il widget} Questa pagina contiene un semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei tickets, in modo che essi posono essere scelti dagli agenti di Zendesk.
+\subsection{Pagina contenente il widget} Questa pagina contiene una semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei \emph{tickets}, in modo che essi posono essere scelti dagli agenti di Zendesk.
 \\ 
 \subsection{Pagina login}
-Semplice pagina contenete il form per il login. Una volta inseriti i valori validi l'utente sarà utenticato come amministratore, caricandoli cosi la pagina degli amministratori. 
+Semplice pagina contenete il \emph{form} per il login. Una volta inseriti i valori validi l'utente sarà utenticato come amministratore, caricandoli cosi la pagina degli amministratori. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=1\columnwidth]{mock/mocklogin} 
 	\caption{Mock pagina di login}
 \end{figure}  \newpage
 \subsection{Pagina degli amministratori}
-Questa pagina dovrà essere realizzata per gli amministratori di Nextep, per permettere a loro di gestire tutti i clienti utilizzatore dell'applicazione. 
+Questa pagina dovrà essere realizzata per gli amministratori di Nextep, per permettere a loro di gestire tutti i clienti utilizzatori dell'applicazione. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.8\columnwidth]{mock/mockadmin} 
@@ -49,20 +49,20 @@ Questa pagina dovrà essere realizzata per gli amministratori di Nextep, per per
 	\item Contiene una semplice tabella, dove ogni elemento della tabella contiene le informazioni di un singolo cliente.
 \end{itemize}
 \subsection{Struttura applicazione}
-Essendo un'unica applicazione che contiene sia le pagine degli amministratori di Nextep che le pagine dell'applicazione, si è pensato quindi una struttura illustrata nel seguente diagramma.
+Essendo un'unica applicazione che contiene sia le pagine degli amministratori di Nextep che le pagine dell'applicazione Zendesk, si è pensato quindi una struttura illustrata nel seguente diagramma.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.8\columnwidth]{prog/pack} 
 	\caption{Struttura applicazione}
 \end{figure}
 \begin{itemize}
-	\item \textbf{AdminPages:} contiente tutti i componenti e i servizi che vanno a formare le pagine(login e di amministratori) per gli utenti di Nextep;
+	\item \textbf{AdminPages:} contiente tutti i componenti e i servizi\footcite{Nel Appendice si trova una descrizione completa di un servizio Angular} che vanno a formare le pagine(login e di amministratori) per gli utenti di Nextep;
 	\item \textbf{PluginPages:} contiene tutti i componenti e i servizi per la pagine contenente l'editor e la pagina contenenti il widget;
-	\item \textbf{Routes:} contiene tutto il codice per gestione della navgazione dell'applicazione.
+	\item \textbf{Routes:} contiene tutto il codice per la gestione della navigazione dell'applicazione.
 \end{itemize}
 \begin{figure}[!h] 
 	\centering 
-	\includegraphics[width=0.7\columnwidth]{prog/routes} 
+	\includegraphics[width=0.6\columnwidth]{prog/routes} 
 	\caption{Struttura Routes}
 \end{figure}
 \begin{itemize}
@@ -135,7 +135,7 @@ Nel contesto dell'applicazione gli atomi e le molecole sono rappresentate dagli 
 \newpage
 \section{Progettazione Backend}
 \subsection{Archittetura a microservizi serverless}
-Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, i servizi scelti sono stati descritti nel capitolo 2. In questa sezione viene descritto come questi servizi comunicano tra di loro. La seguente immagine mostra la panoramica dell'archittettura della applicazione Zendesk realizzata(per la pagina degli amministratori la situazione è leggermente diversa). L'immagine descrive come un template viene caricato nel database nosql presente su Amazon. 
+Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, i servizi scelti sono stati descritti nel capitolo 2. In questa sezione viene descritto come questi servizi comunicano tra di loro. La seguente immagine mostra la panoramica dell'archittettura della applicazione Zendesk realizzata(per la pagina degli amministratori la situazione è leggermente diversa). L'immagine descrive come un template viene caricato nel database NoSQL(database non relazionale) presente su Amazon. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=1.2\columnwidth]{prog/zen-architecture} 
@@ -145,7 +145,7 @@ Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, 
 \begin{itemize}
 	\item Zendesk User interagisce con l'applicazione tramite l'interfaccia di Zendesk;
 	\item Le pagine dell'applicazione Angular sono caricate da CloudFront sui iframe presenti su Zendesk;
-	\item Le pagine appena caricate nei ifrmae leggono il token e il nome del sottodominio della piattforma in cui si trovano utilizzando l'oggetto ZAFClient(descritto nel capitolo 2);
+	\item Le pagine appena caricate nei ifrmae leggono il token e il nome del sottodominio della piattaforma in cui si trovano utilizzando l'oggetto ZAFClient(descritto nel capitolo 2);
 	\item Utente crea un nuovo template e lo salva;
 	\item L'editor manda la richiesta all'API Gateway inviando nel header il token ed il nome del dominio;
 	\item API Gateway come prima cosa verifica il token ed il nome del sottodominio se sono validi. Se sono validi genera un evento che innesca una funzione lambda, altrimenti(token e nomedominio non validi) ritorna un messaggio d'errore;
@@ -164,6 +164,6 @@ Il backend cambia leggermente per quanto riguarda la pagina degli amministratori
 	\item L'utente inserisce le sue credenziali corrette per effettuare il login;
 	\item AWS Cognito verifica le credenziali, se sono valide ritorna il token di accesso altrimenti un errore;
 	\item Le credenziali sono valide, l'utente accede alla pagina degli amministratori;
-	\item L'utente ora può comunicare con l'API Gateway inviando il token ritornato da AWS Cognito. Questo token permette all'utente di inserire oppure eliminare uenti dal database nosql presente su AWS;
+	\item L'utente ora può comunicare con l'API Gateway inviando il token ritornato da AWS Cognito. Questo token permette all'utente di inserire oppure eliminare uenti dal database NoSQL presente su AWS;
 	\item L'inserimento oppure l'eliminazione di un cliente esegue lo stesso flusso visto sopra per i template. Eccezione fatta per l'AWS Cognito, la pagina degli amministratori ha la stessa architettura.
 \end{itemize}

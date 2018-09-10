@@ -5,7 +5,7 @@
 %**************************************************************
 \chapter{Analisi dei requisiti}
 \label{cap:analisi-requisiti}
-Il presente capitolo ha come scopo quello di fornire una descrizione completa e precisa di tutti i requisitiG individuati e dei casi d’uso ad alto livello riguardanti il progetto CS-Template.
+Il presente capitolo ha come scopo quello di fornire una descrizione completa e precisa di tutti i requisiti individuati e dei casi d’uso ad alto livello riguardanti il progetto CS-Template.
 
 \section{Casi d'uso}
 
@@ -15,11 +15,11 @@ Ogni caso d’uso è definito secondo la seguente struttura:
 \begin{itemize}
 	\item Nome: Il titolo del caso d’uso;
 	\item Attori: Indica gli attori principali e secondari del caso d’uso. In tutto il contesto
-	dell’applicazione gli autori del sistema saranno così classificati:
+	dell’applicazione gli attori del sistema saranno così classificati:
 	\begin{itemize}
 		\item Utente Zendesk: sono gli utenti della piattaforma Zendesk. Possono essere gli agenti(persone che gestiscono le richieste dei cleinti) oppure gli amministratore di Zendesk;
 		\item Utente generico: utente qualsiasi che non ha ancora effettuato l'accesso alla pagina degli amministratori;
-		 \item Amministratore: utente amministratore Nextep, che ha compito di gestire tutti le aziende che utilizzano l'applicazione CS-Template.
+		 \item Nextep Admin: utente amministratore Nextep, che ha compito di gestire tutti le aziende che utilizzano l'applicazione CS-Template.
 	\end{itemize}
 
 	\item Descrizione: Riporta una breve descrizione del caso d’uso;
@@ -50,7 +50,7 @@ Questa è la pagina web il cui scopo principale è quello di visualizzare la lis
 	\usecaseactors{Nextep Admin}
 	\usecasedesc{Caso d'uno descrive le funzionalità della pagina degli amministratori di Nextep. In questa pagina è possibile gestire tutti i clienti(aziende) di Nextep che utilizzano l'applicazione CS-Template}
 	\usecasepre{Il sistema riconosce l'amministratore}
-	\usecasepost{L’amministratore visualizza una lista di tutti i clienti(utilizzatori di CS-Template) registrati  nel  sistema,  visualizzando  per  ognuno  di  essi tutte le   informazioni  e un form per aggiungerne uno nuovo}
+	\usecasepost{L’amministratore visualizza una lista di tutti i clienti(utilizzatori di CS-Template) registrati  nel  sistema,  visualizzando  per  ognuno  di  essi tutte le   informazioni  e un \emph{form} per aggiungerne uno nuovo}
 	\begin{figure}[!h] 
 		\centering 
 		\includegraphics[width=1\columnwidth]{usecase/paginaAdmin} 
@@ -74,7 +74,7 @@ Questa pagina web contiene l'editor drag-and-drop che verrà visualizzato succes
 \end{usecase}
 \newpage
 \subsection{ Casi d'uso pagina contenente il widget}
-Questa pagina web contiene il widget che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. Il widget verrà mostrato quando verrà aperto una richeista qualsiasi del cliente. Esso permette di scegliere da una lista il contenuto HTML e CSS da utilizzare come risposta verso il cliente. 
+Questa pagina web contiene il widget che verrà visualizzato successivamente nella piattaforma Zendesk in un iframe. Il widget verrà mostrato quando verrà aperta una richiesta qualsiasi del cliente. Esso permette di scegliere da una lista il contenuto HTML e CSS da utilizzare come risposta verso il cliente. 
 \begin{usecase}{4}{Widget dei template}
 	
 	\usecaseactors{Utente Zendesk}
@@ -95,7 +95,7 @@ Questa pagina web contiene il widget che verrà visualizzato successivamente nel
 
 \section{Tracciamento dei requisiti}
 
-Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
+Da un'attenta analisi dei requisiti e degli \emph{use case} effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli \emph{use case}.\\
 Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
 Il codice dei requisiti è così strutturato R(F/V)(N/D) dove:
 \begin{enumerate}
@@ -135,11 +135,11 @@ RFN-8   & Utente Zendesk può azzerrare il contenuto del editor & UC3 \\
 \hline
 RFN-10   & Utente Zendesk può impostare il nome del template & UC3 \\
 \hline
-RFN-11   & Utente Zendesk può utilizzare il temaplte creato nella risposta verso il cliente & UC4 \\
+RFN-11   & Utente Zendesk può utilizzare il temaplate creato nella risposta verso il cliente & UC4 \\
 \hline
-RFD-12   & Utente Zendesk può esportare tutto i template creati in un file json come backup & UC4 \\
+RFD-12   & Utente Zendesk può esportare tutto i template creati in un file \gls{JSON} come \emph{backup} & UC4 \\
 \hline
-RFD-13   & Utente Zendesk può importare i template da un file json precedentemente creato & UC4 \\
+RFD-13   & Utente Zendesk può importare i template da un file JSON precedentemente creato & UC4 \\
 \hline
 \end{tabularx}
 \end{table}%
@@ -151,9 +151,9 @@ RFD-13   & Utente Zendesk può importare i template da un file json precedenteme
 \hline\hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
 \hline
-RVN-1    & Il backend dell'applicazioend deve essere realizzato utilizzando gli servizi cloud & - \\
+RVN-1    & Il backend dell'applicazione deve essere realizzato utilizzando i servizi cloud & - \\
 \hline
-RVN-2    & L'applicazione deve essere utilizzabile solo dai clienti aggiunti da Nextep, implementando un sistema d' accesso tramite il token & - \\
+RVN-2    & L'applicazione deve essere utilizzabile solo dai clienti aggiunti da Nextep, implementando un sistema d' accesso tramite il \emph{token} & - \\
 \hline
 RVN-3    & L’intero progetto deve essere accompagnato da
 documentazione completa & - \\
