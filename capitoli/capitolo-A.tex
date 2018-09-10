@@ -5,11 +5,11 @@
 %**************************************************************
 \chapter{Appendice A}
 \section{Servizi di Angular 6}
- Un servizio in Angular 6 è una classe di tipo Singleton che implementa funzionalità condivise dai vari elementi di un’applicazione, siano essi componenti che altri servizi.
+ Un servizio in Angular 6 è una classe di tipo \gls{Singleton} che implementa funzionalità condivise dai vari elementi di un’applicazione, siano essi componenti che altri servizi.
 Ne esiste solo un istanza di uno servizio per tutta l'applicazione, in questo modo i dati condivisi dai diversi componenti sono gli stessi.
 \\
 
-L'implementazione di un servizio aviene utilizando il decorator @Injectable() di Angular. Questo decorator aggiunge alla classe dei metadati che permettono ad Angular di iniettare il servizio nei compoenti come una dipendenza. Viene utilizzato Dependency injection(DI) design pattern per iniettare le dipendenze dei servizi nei componenti. 
+L'implementazione di un servizio avviene utilizzando il \emph{decorator @Injectable()} di Angular. Questo \emph{decorator}(design pattern \gls{Decorator}) aggiunge alla classe dei metadati che permettono ad Angular di iniettare il servizio nei componenti come una dipendenza. Viene utilizzato ]Dependency injection(\gls{DI}) design pattern per iniettare le dipendenze dei servizi nei componenti. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.5\columnwidth]{DI} 
@@ -17,24 +17,24 @@ L'implementazione di un servizio aviene utilizando il decorator @Injectable() di
 \end{figure}
 \\
 
-Dependency injection è utilizzato ovunque nel Framework Angular. In un'applicazione Angular un componente in media consuma molti servizi utilizzando DI, che li fornisce accesso a tutti i metodi e ai dati forniti dal servizio. 
+Dependency injection è utilizzato ovunque nel framework Angular. In un'applicazione Angular un componente in media consuma molti servizi utilizzando DI, che li fornisce accesso a tutti i metodi e ai dati forniti dal servizio. 
 \\ 
 
 Quando un componente viene creato come prima cosa vengono controllate le sue dipendenze. Se il componente dipende da qualche servizio viene generato l'istanza Singleton di tale servizio(se non esiste già), in questo modo vengono soddisfatte tutte le dipendenze del componente prima della sua creazione. 
-La Dependency injection è gestito dal oggetto injector di Angular, che ha il semplice compito di soddisfare le dipendenze. 
+La Dependency injection è gestito dal oggetto \emph{injector} di Angular, che ha il semplice compito di soddisfare le dipendenze. 
 \begin{figure}[!ht] 
 	\centering 
 	\includegraphics[width=0.7\columnwidth]{DI2} 
 	\caption{DI in Angular}
 \end{figure}
 \section{RxJS in Angular 6}
-RxJS (Reactive Extensions for JavaScript) è una libreria di reactive programming che permette di gestire le chiamate asincrone in maniera molto semplice. Questa libreria è già integrata dalla versione 4 in poi di Angular. 
+RxJS (Reactive Extensions for JavaScript) è una libreria di \emph{reactive programming} che permette di gestire le chiamate asincrone in maniera molto semplice. Questa libreria è già integrata dalla versione 4 in poi di Angular. 
 \begin{figure}[!ht] 
 	\centering 
 	\includegraphics[width=0.5\columnwidth]{rxjs} 
 	\caption{Logo di Angular e RxJS}
 \end{figure}
 
-Questa libreria permette di implementare molto facilmente il design pattern Observer. Permette di trasformare qualsiasi tipo di Typescript in un Subject, ovvero qualcosa che può essere osservato da molti osservatori. Quando un Subject cambia nel tempo automaticamente tutti gli osservatori vengono avvisati del suo cambiamento. 
+Questa libreria permette di implementare molto facilmente il design pattern \gls{Observer}. Permette di trasformare qualsiasi tipo di Typescript in un \emph{Subject}, ovvero qualcosa che può essere osservato dagli osservatori. Quando un \emph{Subject} cambia nel tempo automaticamente tutti gli osservatori vengono avvisati del suo cambiamento. 
 
-Nel contesto dell'applicazione i Subjects sono utilizzanti nei  RemoteServices(capitolo 4) che sono dei servizi per le chiamate asincrone. I componenti si mettono in ascolto facendo subscribe a un oggetto Subject, appena la chiamata asincrona ritorna i dati il Subject si aggiorna e di conseguenza anche i componenti che lo stavano osservando, aggiornando cosi la view in modo reattivo. 
+Nel contesto dell'applicazione i \emph{Subjects} sono utilizzanti nei  RemoteServices(capitolo 4) che sono dei servizi per le chiamate asincrone. I componenti si mettono in ascolto facendo \emph{subscribe} a un oggetto Subject, appena la chiamata asincrona ritorna i dati il \emph{Subject} si aggiorna e di conseguenza anche i componenti che lo stavano osservando, aggiornando cosi la \emph{view} in modo reattivo. 
