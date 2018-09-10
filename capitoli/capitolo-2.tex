@@ -8,18 +8,18 @@
 In questo capitolo seguirà un elenco delle tecnologie di riferimento adottate per la realizzazione dell'applicazione CS-Template.
 \section{Frontend}
 \subsection{Angular 6}
-Angular è una piattaforma opensourse realizzato da Google nel 2016 che permette di creare le SPA, sfruttando i
-pattern architetturali MVC e MVVM.
+Angular è una \gls{framework} opensourse realizzato da Google nel 2016 che permette di creare le \gls{SPA}, sfruttando i \gls{design
+pattern} architetturali \gls{MVC} e \gls{MVVM}.
 \\
 
-Le applicazioni sviluppate in Angular vengono eseguite interamente dal web browser dopo essere state scaricate dal web server. Questo comporta il risparmio di dover spedire indietro la pagina web al web-server ogni volta che c'è una richiesta di azione da parte dell'utente. Il codice generato da Angular gira su tutti i principali web browser moderni.
+Le applicazioni sviluppate in Angular vengono eseguite interamente dal \emph{web browser} dopo essere state scaricate dal \emph{web server}. Questo comporta il risparmio di dover spedire indietro la pagina web al \emph{web-server} ogni volta che c'è una richiesta di azione da parte dell'utente. Il codice generato da Angular gira su tutti i principali \emph{web browser} moderni.
 \\
 
-Ogni pagina web viene costruitta da diversi componenti. Un componente in Angular in generale è una piccola parte della view che rappresenta una specifica funzionalità(esempio la navbar).   Ogni componente ha una propria logica
+Ogni pagina viene costruitta da diversi componenti. Un componente in Angular in generale è una piccola parte della pagina che rappresenta una specifica funzionalità(esempio la navbar).   Ogni componente ha una propria logica
 strutturale (scritta tramite appositi marcatori HTML), di presentazione (scritta con
-appositi fogli di stile CSS oppure SCSS) e di business (scritta con il linguaggio di programmazione
+appositi fogli di stile CSS oppure SASS) e di \emph{business} (scritta con il linguaggio di programmazione
 TypeScript). Tutti i componenti possono comunicare tra di loro scambiandosi
-oggetti, lo scambio viene fatto utilizzando diversi strumenti messi a disposizione da Angular. Oggi tale framework è alla versione 6.
+oggetti, lo scambio viene fatto utilizzando diversi strumenti messi a disposizione da Angular. Oggi tale \emph{framework} è alla versione 6.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{angular-logo} 
@@ -27,7 +27,7 @@ oggetti, lo scambio viene fatto utilizzando diversi strumenti messi a disposizio
 \end{figure}
 
 \subsection{Angular material}
-Angular material è una libreria che contiene una raccolta di componenti di Materia DesignG. Questo libreria è stata sviluppata sempre da Google e permette di realizzare delle UI molto avanzata in maniera molto semplice. Fornendo una serie di semplici componenti(come i pulsanti, inputbox ecc) di Angular già fatta permette agli sviluppatori di risparmiare una notevole quantità di tempo. Tutti i componenti sono testati da Google garantendo cosi un corretto funzionamento.
+Angular material è una libreria che contiene una raccolta di componenti di Material Design\footcite{https://material.io/design/}. Questo libreria è stata sviluppata sempre da Google e permette di realizzare delle \gls{UI} molto avanzate in maniera molto semplice. Fornendo una serie di semplici componenti(come i pulsanti, inputbox ecc) di Angular già fatta permette agli sviluppatori di risparmiare una notevole quantità di tempo. Tutti i componenti sono testati da Google garantendo cosi un corretto funzionamento.
 
 \begin{figure}[!h] 
 	\centering 
@@ -36,10 +36,10 @@ Angular material è una libreria che contiene una raccolta di componenti di Mate
 \end{figure}
 
 
-\subsection{Typescript} TypeScript è un linguaggio di programmazione libero ed Open source sviluppato da Microsoft basato su EMCAScript 6. Esso estende la sintassi di Javscript aggiungendo il concetto di tipizzazione(interfacce, classi, enum ecc). Questo lo rende molto simile ai linguaggi di programmazione come Java oppure C++, e diventa anche molto semplice l'applicazione di molti design pattern conosciuti.
+\subsection{Typescript} TypeScript è un linguaggio di programmazione libero ed Open source(libero) sviluppato da Microsoft basato su \gls{EMCAScript 6}. Esso estende la sintassi di \gls{Javascript} aggiungendo il concetto di tipizzazione(interfacce, classi, enum ecc). Questo lo rende molto simile ai linguaggi di programmazione come Java oppure C++, e diventa anche molto semplice l'applicazione di molti \emph{design pattern} conosciuti.
 \\
 
- TypeScript nasce dal crescente bisogno di un linguaggio front-end per lo sviluppo di applicazioni JavaScript larga scala. Il linguaggio è nato dalla necessità di sicurezza e robustezza, sia da sviluppatori interni a Microsoft sia clienti. 
+ TypeScript nasce dal crescente bisogno di un linguaggio \emph{frontend} per lo sviluppo di applicazioni JavaScript a larga scala. Il linguaggio è nato dalla necessità di sicurezza e robustezza, sia da sviluppatori interni a Microsoft sia clienti. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{typescript} 
@@ -47,8 +47,8 @@ Angular material è una libreria che contiene una raccolta di componenti di Mate
 \end{figure}
 
 
-\subsection{HTML 5} L'HTML5 è un linguaggio di markup per la strutturazione delle pagine web, pubblicato come W3C Recommendation da ottobre 2014. HTML è stato usato come linguaggio per la definizione della logica strutturale del
-front-end dell’applicazione. Una delle principali vantaggi di Angular sta proprio nel utilizzo di HTML pure rispetto i framework/librerie revali come React oppure Vue. 
+\subsection{HTML 5} L'HTML5 è un linguaggio di \emph{markup} per la strutturazione delle pagine web, pubblicato come \gls{W3C Recommendation} da ottobre 2014. HTML è stato usato come linguaggio per la definizione della logica strutturale del
+\emph{frontend} dell’applicazione. Una delle principali vantaggi di Angular sta proprio nel utilizzo di HTML puro rispetto i \emph{framework}/librerie revali come React oppure Vue. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{html} 
@@ -58,7 +58,7 @@ front-end dell’applicazione. Una delle principali vantaggi di Angular sta prop
 \subsection{SASS} Sass (Syntactically Awesome StyleSheets) è un'estensione del linguaggio CSS che permette di utilizzare variabili, di creare funzioni e di organizzare il foglio di stile in più file.
 \\
 
-Il linguaggio Sass si basa sul concetto di preprocessore CSS, il quale serve a definire fogli di stile con una forma più semplice, completa e potente rispetto ai CSS e a generare file CSS ottimizzati, aggregando le strutture definite anche in modo complesso. SASS/CSS è un linguaggio utilizzato per definire la presentazione dell'applicazione. Poichè Angular Material fornisce molti componenti prefatti, questo linguaggio è utilizzato principalmente per definire il layout delle pagine. 
+Il linguaggio Sass si basa sul concetto di preprocessore CSS, il quale serve a definire fogli di stile con una forma più semplice, completa e potente rispetto ai CSS e a generare file CSS ottimizzati, aggregando le strutture definite anche in modo complesso. SASS è un linguaggio utilizzato per definire la presentazione dell'applicazione. Poichè Angular Material fornisce molti componenti prefatti, questo linguaggio è utilizzato principalmente per definire il \emph{layout} delle pagine. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{sass}
@@ -66,25 +66,25 @@ Il linguaggio Sass si basa sul concetto di preprocessore CSS, il quale serve a d
 \end{figure}
 
 \section{Tecnologie Backend}
-Per quanto riguarda il lato Backend è stato deciso di utilizzare il cloud computing. Esso è la distribuzione di servizi di calcolo, come server, risorse di archiviazione, database, rete, software, analisi e molto altro, tramite Internet ("il cloud"). 
+Per quanto riguarda il lato \emph{Backend} è stato deciso di utilizzare il \emph{cloud computing}. Esso è la distribuzione di servizi di calcolo, come \emph{server}, risorse di archiviazione, \emph{database}, rete, \emph{software}, analisi e molto altro, tramite \emph{Internet} ("il cloud"). 
 \\
 
-Le società che offrono questi servizi di calcolo sono dette provider di servizi cloud e in genere addebitano un costo per i servizi di cloud computing in base all'utilizzo(on demand). I provider più famosi oggigiorno sono Amazon, Microsoft e Google. 
+Le società che offrono questi servizi di calcolo sono dette \emph{provider} di servizi \emph{cloud} e in genere addebitano un costo per i servizi di \emph{cloud computing} in base all'utilizzo(on demand). I provider più famosi oggigiorno sono Amazon, Microsoft e Google. 
 \\
 
-Dopo una breve analisi e confronto tra i servizi offerti da questi provider è stato deciso di utilizzare i servizi offerti da Amazon, ovvero gli AWS. La scelta è stata fatta soprattutto per la popolarità dei servizi Amazon: essendo Amazon il primo a fornire questo tipo di servizi, questi sono attualmente molto più utilizzati rispetto gli altri due. Per quanto riguarda i prezzi, quantità e qualità di servizi offerti da tutti i provider non è stato trovato un rilevante differenza. 
+Dopo una breve analisi e confronto tra i servizi offerti da questi provider è stato deciso di utilizzare i servizi offerti da Amazon, ovvero gli AWS(Amazon Web Services). La scelta è stata fatta soprattutto per la popolarità dei servizi Amazon: essendo Amazon il primo a fornire questo tipo di servizi, questi sono attualmente molto più utilizzati rispetto gli altri due. Per quanto riguarda i prezzi, quantità e qualità di servizi offerti da tutti i \emph{provider} non è stato trovato una rilevante differenza. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.6\columnwidth]{ccaws}
 	\caption{AWS cloud computing}
 \end{figure} 
 \subsection{Amazon Web Services}
-Per l'applicazione in questione sono stati identificati specifici servizi di Amazon, che hanno permesso poi di realizzare un'architettura serverless facilmente scalabile. In seguito è fornita una descrizione generale dei servizi scelti.
+Per l'applicazione in questione sono stati identificati specifici servizi di Amazon, che hanno permesso poi di realizzare un'architettura \gls{serverless} facilmente scalabile. In seguito è fornita una descrizione generale dei servizi scelti.
 
 \subsection{AWS API Gateway} Amazon API Gateway è un servizio il cui scopo è quello di semplificare agli sviluppatori
 la creazione, la pubblicazione, la manutenzione, il monitoraggio e la protezione
-delle API su qualsiasi scala.
-Questo servizio permette di creare un punto d'ingresso attraverso il quale le applicazioni posso accedere ai dati. Fornisce una API per ricevere le richiesta dalle applicazioni, dopo ogni richiesta questo servizio genera un evento che esegue qualcosa(una funzione lambda, un altra chiamata ecc).
+delle \gls{API} su qualsiasi scala.
+Questo servizio permette di creare un punto d'ingresso attraverso il quale le applicazioni posso accedere ai dati. Fornisce una API per ricevere le richiesta dalle applicazioni, dopo ogni richiesta questo servizio genera un evento che esegue qualcosa(una funzione lambda oppure un altra chiamata).
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.2\columnwidth]{gateway}
@@ -93,10 +93,10 @@ Questo servizio permette di creare un punto d'ingresso attraverso il quale le ap
 
 \subsection{AWS Lambda} 
 
-Sono delle semplici funzioni che ricevono come input un evento e possono ritornare qualche valore. Possono essere scritte in molti linguaggi di programmazione, come Nodejs(javascript), Java, C++ e Phython. 
+Sono delle semplici funzioni che ricevono come \emph{input} un evento e possono ritornare qualche valore. Possono essere scritte in molti linguaggi di programmazione, come Nodejs(javascript), Java, C++ e Phython. 
 \\
 
-Queste funzioni possono comunicare con qualsiasi servizio di Amazon utilizzando AWS-SDK. In questo progetto sono state utilizzate diverse funzioni di questo tipo, principalmente per scrivere o leggere i dati su database.
+Queste funzioni possono comunicare con qualsiasi servizio di Amazon utilizzando \gls{AWS-SDK}. In questo progetto sono state utilizzate diverse funzioni di questo tipo, principalmente per scrivere o leggere i dati su/dal database.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.5\columnwidth]{lambda}
@@ -104,10 +104,10 @@ Queste funzioni possono comunicare con qualsiasi servizio di Amazon utilizzando 
 \end{figure}  
 
 \subsection{AWS DynomoDB} 
-Amazon DynamoDB è un database non relazionale che fornisce prestazioni affidabili su qualsiasi scala. Si tratta di un database multi-master, multiregione e completamente gestito che fornisce latenza costante di pochi millisecondi e sicurezza integrata, backup e ripristino e cache in memoria.
+Amazon DynamoDB è un database non relazionale che fornisce prestazioni affidabili su qualsiasi scala. Si tratta di un database \emph{multi-master}, multiregione e completamente gestito che fornisce latenza costante di pochi millisecondi e sicurezza integrata, \emph{backup} e ripristino e \emph{cache} in memoria.
 \\
 
- Tutti i dati degli utenti e i template sono stati salvati su questo database. L'acceso a tali avviene solo tramite le funzioni lambda.   
+ Tutti i dati degli utenti e i \emph{template} sono stati salvati su questo database. L'acceso a tali avviene solo tramite le funzioni lambda.   
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.3\columnwidth]{dynamo}
@@ -115,11 +115,11 @@ Amazon DynamoDB è un database non relazionale che fornisce prestazioni affidabi
 \end{figure}
 
 \subsection{AWS S3} 
-Amazon Simple Storage Service è uno storage di
+Amazon Simple Storage Service è uno \emph{storage} di
 oggetti creato per memorizzare e ripristinare qualsiasi volume di dati da qualunque
 origine: siti web, applicazioni per mobile o dati provenienti da diversi dispositivi. Può
 essere utilizzato per memorizzare file multimediali ed è ideale per acquisire dati quali
-foto, video o immagini di risoluzione elevata da dispositivi mobili, backup di dispositivi
+foto, video o immagini di risoluzione elevata da dispositivi mobili, \emph{backup} di dispositivi
 mobile o computer.
 \\
 
@@ -132,10 +132,10 @@ non strutturati dell’applicazione. Inoltre l'applicazione stessa è stata cari
 \end{figure}
 
 \subsection{AWS Cognito} 
-Amazon Cognito permette di aggiungere strumenti di registrazione, accesso e controllo degli accessi alle app Web e per dispositivi mobili in modo rapido e semplice. Amazon Cognito permette di ricalibrare le risorse per milioni di utenti e supporta l'accesso con provider di identità social quali Facebook, Google e Amazon. 
+Amazon Cognito permette di aggiungere strumenti di registrazione, accesso e controllo degli accessi alle \emph{app Web} e per dispositivi mobili in modo rapido e semplice. Amazon Cognito permette di ricalibrare le risorse per milioni di utenti e supporta l'accesso con provider di identità \emph{social} quali Facebook, Google e Amazon. 
 \\
 
-Nel contesto dello stage è stato utilizzato per garantire l'accesso alla pagina di amministratore solo agli utenti con le credenziali valide.   
+Nel contesto dello stage è stato utilizzato per garantire l'accesso alla pagina degli amministratori solo agli utenti con le credenziali valide.   
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.4\columnwidth]{cognito}
@@ -146,41 +146,41 @@ Nel contesto dello stage è stato utilizzato per garantire l'accesso alla pagina
 Git è un software di controllo di versione distribuito, creato nel 2005 da Linus
 Torvalds (creatore di Linux). È usabile principalmente da interfaccia linea di comando,
 ed oggi è in assoluto uno dei software per il controllo di versione più utilizzati. Come
-tutti i software per il controllo di versione, si basa sul concetto di repository, ovvero
+tutti i software per il controllo di versione, si basa sul concetto di \gls{repository}, ovvero
 un ambiente in cui vengono immagazzinati i metadati che possono essere recuperati e
 aggiornati da chi può averne accesso (è possibile ripristinare versioni precedenti dei
-dati caricati nel repository, poichè essi non vengono sovrascritti con gli aggiornamenti).
+dati caricati nel \emph{repository}, poichè essi non vengono sovrascritti con gli aggiornamenti).
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.25\columnwidth]{git}
 	\caption{Logo di Git}
 \end{figure}
 
-\subsection{GitLab}GitLab è una piattaforma web open source che permette la gestione di repository Git. GitLab permette la creazione di repository pubblici o privati, in cui gli sviluppatori possono caricare il proprio codice e gestire le modifiche alle varie versioni in contemporanea al lavoro di più persone. 
+\subsection{GitLab}GitLab è una piattaforma web open source(libera) che permette la gestione di \emph{repository} Git. GitLab permette la creazione di \emph{repository} pubblici o privati, in cui gli sviluppatori possono caricare il proprio codice e gestire le modifiche alle varie versioni in contemporanea al lavoro di più persone. 
 \\
 
-In GitLab è possibile lavorare parallelamente ad altre persone sullo stesso progetto senza generare conflitti, caricare il proprio lavoro nel repository remoto (operazione di push) e poter unire alla fine le modifiche di tutti in un unico progetto (operazione di merge). GitLab mette a disposizione diverse funzionalità a seconda del tipo di abbonamento e del prezzo pagato. È comunque possibile utilizzarlo gratuitamente, seppur con delle limitazioni. Nel contesto dello stage è stato utilizzato GitLab con l'account aziendale di Nextep, permettendo cosi di lavorare su una repository privata. 
+In GitLab è possibile lavorare parallelamente ad altre persone sullo stesso progetto senza generare conflitti, caricare il proprio lavoro nel \emph{repository} remoto (operazione di \emph{push}) e poter unire alla fine le modifiche di tutti in un unico progetto (operazione di \emph{merge}). GitLab mette a disposizione diverse funzionalità a seconda del tipo di abbonamento e del prezzo pagato. È comunque possibile utilizzarlo gratuitamente, seppur con delle limitazioni. Nel contesto dello stage è stato utilizzato GitLab con l'account aziendale di Nextep, permettendo cosi di lavorare su una \emph{repository} privata. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.25\columnwidth]{gitlab}
 	\caption{Logo di Gitlab}
 \end{figure}
 \subsection{Atom}
-Atom è un editor di testo Open-Sourse sviluppato nel 2014 da GitHub. Questo editor è stato scritto completamente utilizzando le tecnologie web(Html, CSS e Javascript). 
-Una delle cose molto interessanti di questo editor è quello di avere Git già integrato, permettendo in questo modo di fare commit sin da subito. 
+Atom è un \emph{editor} di testo \emph{open sourse} sviluppato nel 2014 da GitHub. Questo \emph{editor} è stato scritto completamente utilizzando le tecnologie web(Html, CSS e Javascript). 
+Una delle cose molto interessanti di questo editor è quello di avere Git già integrato, permettendo in questo modo di fare \gls{commit} sin da subito. 
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.6\columnwidth]{atom}
 	\caption{Logo di Atom}
 \end{figure}
- \section{Figma} Figma è una piattaforma online che permette di creare mock delle interfacce. Molto utile per definire la View delle pagine prima di iniziare a scrivere il codice, in questo modo si è in grado di capire sin da subito che tipo di interfaccia l'applicazione deve avere.
+ \section{Figma} Figma è una piattaforma online che permette di creare \gls{mock} delle interfacce. Molto utile per definire la \emph{view} delle pagine prima di iniziare a scrivere il codice, in questo modo si è in grado di capire sin da subito che tipo di interfaccia l'applicazione deve avere.
  \begin{figure}[!h] 
  	\centering 
  	\includegraphics[width=0.2\columnwidth]{figama}
  	\caption{Logo di Figma}
  \end{figure}
 \section{Zendesk Apps framework(ZAF)}
-ZAF è un semplice framework sviluppato da Zendesk Inc. Permette di integrare nella piattaforma Zendesk applicazione web realizzata con qualsiasi tecnologia web. 
+ZAF è un semplice \emph{framework} sviluppato da Zendesk Inc. Permette di integrare nella piattaforma Zendesk applicazione web realizzata con qualsiasi tecnologia web. 
 \\
 
 Questo framework genera dei package che rappresentano un app di Zendesk.
@@ -203,10 +203,10 @@ Take package può essere installato sulla propria piattaforma Zendesk come una a
   }]
 }
 \end{lstlisting}
-L'attributo "location" è quello più importante. Questo attributo specifica dove visualizzare l'applicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra più di dieci posizioni differenti, e per ogni posizione specificata bisogna indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici iframe che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
+L'attributo "location" è quello più importante. Questo attributo specifica dove visualizzare l'applicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra più di dieci posizioni differenti, e per ogni posizione specificata bisogna indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici \gls{iframe} che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
 \\
 
-L'attributo "parameters" indica i parametri da chiedere all'utente durante l'installazione dell'applicazione sulla piattaforma. Nel contesto dell'applicazione è richiesto di inserire obbligatoriamente un token da 16 cifre, l'inserimento sbagliato di tale valore comporta inutilizzo dell'applicazione CS-Template. 
+L'attributo "parameters" indica i parametri da chiedere all'utente durante l'installazione dell'applicazione sulla piattaforma Zendesk. Nel contesto dell'applicazione è richiesto di inserire obbligatoriamente un token di 12 cifre, l'inserimento sbagliato di tale valore comporta inutilizzo dell'applicazione CS-Template. 
 
 \subsection{ZAF Client SDK}
 Ovviamente non avrebbe senso semplicemente visualizzare le pagine web sulla piattaforma se queste non possono interagire con le funzionalità di Zendesk. 
