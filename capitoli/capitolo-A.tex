@@ -28,9 +28,13 @@ La Dependency injection è gestito dal oggetto injector di Angular, che ha il se
 	\caption{DI in Angular}
 \end{figure}
 \section{RxJS in Angular 6}
-RxJS (Reactive Extensions for JavaScript) è una libreria di reactive programming che permette di gestire le chiamate asincrone in maniera molto semplice.
+RxJS (Reactive Extensions for JavaScript) è una libreria di reactive programming che permette di gestire le chiamate asincrone in maniera molto semplice. Questa libreria è già integrata dalla versione 4 in poi di Angular. 
 \begin{figure}[!ht] 
 	\centering 
 	\includegraphics[width=0.5\columnwidth]{rxjs} 
-	\caption{Logo di Angular ed RxJS}
+	\caption{Logo di Angular e RxJS}
 \end{figure}
+
+Questa libreria permette di implementare molto facilmente il design pattern Observer. Permette di trasformare qualsiasi tipo di Typescript in un Subject, ovvero qualcosa che può essere osservato da molti osservatori. Quando un subject cambia nel tempo automaticamente tutti gli oservatori vengono avvisati del suo cambiamento. 
+
+Nel contesto dell'applicazione i subkects sono utilizzanti nei  RemoteServices(capitolo 4) che sono dei servizi per le chiamate asincrone. I componenti si mettono in ascolto facendo subscribe a un oggetto subject, appena la chimata asincrona ritorna i dati il subject si aggiorna e di conseguenza anche i componenti che lo stavano osservando, aggiornando cosi la view in modo reattivo. 
