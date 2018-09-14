@@ -3,16 +3,42 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Progettazione}
+\chapter{Lo stage}
 \label{cap:progettazione}
 \label{sec:tecnologie-strumenti}
+ \section{La pianificazione}
+ \begin{figure}[!h] 
+ 	\centering 
+ 	\includegraphics[width=1.2\columnwidth]{piani} 
+ 	\caption{La pianificazione}
+ \end{figure}
+Per raggiungere gli obiettivi pianificati nel piano di stage e rispettare i
+requisiti imposti dall’Università, io e il tutor aziendale abbiamo
+previsto 320 ore di lavoro, distribuite in circa 8 settimane da 40 ore ciascuna.
+L'inzio è avvenuto il 02 Agosto 2018 e la fine il 03 Agosto 2018, 
+terminando cosi con una settimana in ritardo. Le ore fatto comunque rimangono sempre 320(8 settimane), la settimana in più andava a sostituire la settimana libera che mi sono preso dallo stage per le diverse motivazioni personali. 
+\\
+\\
+Le fasi individuate dal piano di studio sono:
 
-In questo capitolo vengono illustrate le strategie di progettazione adottate per la realizzazione del prodotto in questione. La progettazione viene descritta ad alto livello senza descrivere in dettaglio tutti i diagrammi delle classi. 
+\begin{itemize}
+	\item \textbf{FASE 1 - Analisi dei requisiti e la formazione tecnica:} durante questa prima fase, dopo diversi incontri con il tutor aziendale verranno definiti tutti i requisiti da soddisfare e le tecnologie da utilizzare alla fine di raggiungere l'obiettivo prefissato. sono stati definiti tutti gli obiettivi e le tecnologie da utilizzare. Una volta definiti questi concetti, inizierà la formazione e la realizzazione di un semplice Prof of concept, che andrà a dimostrare quanto imparato e soprattutto la fattibilità dell'applicazione;
+	\item \textbf{FASE 2 - La progettazione} dopo aver individualizzato tutti i requisiti da soddisfare, imparato almeno per una buona parte le tecnologie da utilizzare e realizzato un semplice prof of concept, verrà definito tutta la progettazione architetturale dell'applicazione finale;
+		\item \textbf{FASE 4 - Implementazione} questa fase consiste nella codifica di quanto progettato. E' la fase con la durata più lunga. Tutta l'applicazione deve essere sviluppata in questa fase sia per quanto riguarda il lato frontend che quello backend;
+		\item \textbf{FASE 4 - Validazione requisiti e stesura documentazione} L'ultima fase della pianificazione di durata circa una settimana consiste nella verifica dei requisiti
+			del progetto di stage e la redazione della documentazione tecnica.
+\end{itemize}
+\section{Analisi dei requisiti e formazione tecnica}
+Nei primi giorni ho avuto modo di fare diversi incontri con il tutor aziendale per capire meglio l'applicazione da realizzare e per definire tutti gli obbiettivi da raggiungere. 
+Definiti gli obbietvi del progetto, ho iiziato a studiare tutte le tecnologie elencate nel capitolo 2. Ovviamente molte di queste le avevo già studiare nella mia cariera universitaria, ed altre erano molte simili alle tecnolgie già viste. Quindi non ho avuto tante difficoltà a capire lo stack tenlogico da imparare.
+ Sono riuscito già alla seconda settimana a realizzare il prof of concept senza troppe difficoltà.  
+\section{La Progettazione}
 
-\section{Progettazione Frontend}
+Di seguito vengono illustrate le strategie di progettazione adottate per la realizzazione del prodotto in questione. La progettazione viene descritta ad alto livello senza descrivere in dettaglio tutti i diagrammi delle classi.
+\subsection{Progettazione Frontend}
 \label{sec:progettazione}
 Come prima cosa sono stati realizzati utilizzando Figma i prototipi delle pagine da creare. In questo modo è stato possibile capire sin da subito la struttura delle pagine, rendendo cosi molto semplice la progettazione architetturale di tale pagine.
-\subsection{Pagina cotenente l'editor}
+\subsubsection{Pagina cotenente l'editor}
 Questa pagina contiene l'editor \emph{drag and drop}. Per creare la struttura di questa pagina sono stati studiati diversi editor online che forniscono le stesse funzionalità(in diversi contesti). Dopo una attenta analisi delle strutture dei diversi editor online è stato concepita la seguente struttura:
 \begin{figure}[!h] 
 	\centering 
@@ -27,9 +53,9 @@ Questa pagina contiene l'editor \emph{drag and drop}. Per creare la struttura di
 	\item Il contenitore a destra dovrà contenere tutti i template realizzati dagli utenti. Quindi esso contiene semplicemente una lista di tutti i template.  
 \end{itemize}
 
-\subsection{Pagina contenente il widget} Questa pagina contiene una semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei \emph{tickets}, in modo che essi posono essere scelti dagli agenti di Zendesk.
+\subsubsection{Pagina contenente il widget} Questa pagina contiene una semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei \emph{tickets}, in modo che essi posono essere scelti dagli agenti di Zendesk.
 \\ 
-\subsection{Pagina login}
+\subsubsection{Pagina login}
 Semplice pagina contenete il \emph{form} per il login. Una volta inseriti i valori validi l'utente sarà utenticato come amministratore, caricandoli cosi la pagina degli amministratori. 
 \begin{figure}[!h] 
 	\centering 
@@ -48,7 +74,7 @@ Questa pagina dovrà essere realizzata per gli amministratori di Nextep, per per
 	\item Contiene un semplice form per aggiungere un nuovo cliente;
 	\item Contiene una semplice tabella, dove ogni elemento della tabella contiene le informazioni di un singolo cliente.
 \end{itemize}
-\subsection{Struttura applicazione}
+\subsubsection{Struttura applicazione}
 Essendo un'unica applicazione che contiene sia le pagine degli amministratori di Nextep che le pagine dell'applicazione Zendesk, si è pensato quindi una struttura illustrata nel seguente diagramma.
 \begin{figure}[!h] 
 	\centering 
@@ -70,7 +96,7 @@ Essendo un'unica applicazione che contiene sia le pagine degli amministratori di
 	\item L'oggetto \textbf{AuthGuard} serve per bloccare la navigazione alla pagina degli amministratori finchè l'utente non effettua il login. 
 	\\
 \end{itemize}
-\subsection{PluginPages}
+\subsubsection{PluginPages}
 Contiene tutti i componenti e servizi per realizzare le pagine contenenti l'editor e il widget.
 \begin{figure}[!h] 
 	\centering 
@@ -86,7 +112,7 @@ Contiene tutti i componenti e servizi per realizzare le pagine contenenti l'edit
 	\item \textbf{Pipes:} contiene le pipes di  Angular.
 \end{itemize}
 \newpage
-\subsection{AdminPages}
+\subsubsection{AdminPages}
 Contiene tutti i componenti e servizi per realizzare la pagina di login e la pagina degli amministratori.
 \begin{figure}[!h] 
 	\centering 
@@ -100,7 +126,7 @@ Contiene tutti i componenti e servizi per realizzare la pagina di login e la pag
 	\item \textbf{Admin:} contiene tutti i componenti Angular che formano la pagina degli amministratori;
 	\item \textbf{Login:} contiene tutti i componenti Angular che formano la pagina di login;
 \end{itemize}
-\subsection{Atomic design}
+\subsubsection{Atomic design}
 Per realizzare le diverse pagine dell'applicazione è stato utilizzato il concetto di Atomic Design.
 Creata da Brad Frost nel 2013, l'Atomic design è una metodologia composta da 5 differenti fasi, utile per creare un sistema di interfacce in maniera gerarchica. In questa metologia si parte dai componenti piu basilari possibili, fino ad arrivare alle pagine finali. E' quindi un approccio bottom-up.
 \begin{figure}[!h] 
