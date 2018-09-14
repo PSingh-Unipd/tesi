@@ -30,7 +30,7 @@ Le fasi individuate dal piano di studio sono:
 \end{itemize}
 \section{Analisi dei requisiti e formazione tecnica}
 Nei primi giorni ho avuto modo di fare diversi incontri con il tutor aziendale per capire meglio l'applicazione da realizzare e per definire tutti gli obbiettivi da raggiungere. 
-Definiti gli obbietvi del progetto, ho iiziato a studiare tutte le tecnologie elencate nel capitolo 2. Ovviamente molte di queste le avevo già studiare nella mia cariera universitaria, ed altre erano molte simili alle tecnolgie già viste. Quindi non ho avuto tante difficoltà a capire lo stack tenlogico da imparare.
+Definiti gli obiettivi del progetto, ho iniziato a studiare tutte le tecnologie elencate nel capitolo 2. Ovviamente molte di queste le avevo già studiare nella mia cariera universitaria, ed altre erano molte simili alle tecnolgie già viste. Quindi non ho avuto tante difficoltà a capire lo stack tenlogico da imparare.
  Sono riuscito già alla seconda settimana a realizzare il prof of concept senza troppe difficoltà.  
 \section{La Progettazione}
 
@@ -62,7 +62,7 @@ Semplice pagina contenete il \emph{form} per il login. Una volta inseriti i valo
 	\includegraphics[width=1\columnwidth]{mock/mocklogin} 
 	\caption{Mock pagina di login}
 \end{figure}  \newpage
-\subsection{Pagina degli amministratori}
+\subsubsection{Pagina degli amministratori}
 Questa pagina dovrà essere realizzata per gli amministratori di Nextep, per permettere a loro di gestire tutti i clienti utilizzatori dell'applicazione. 
 \begin{figure}[!h] 
 	\centering 
@@ -159,8 +159,8 @@ Nel contesto dell'applicazione gli atomi e le molecole sono rappresentate dagli 
 
 \textbf{Le pagine:} sono dei templates riempiti di contenuto reale, come immagini, testi, elementi grafici, advertising, ecc. Una pagina quindi è formata da molti template. 
 \newpage
-\section{Progettazione Backend}
-\subsection{Archittetura a microservizi serverless}
+\subsection{Progettazione Backend}
+\subsubsection{Archittetura a microservizi serverless}
 Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, i servizi scelti sono stati descritti nel capitolo 2. In questa sezione viene descritto come questi servizi comunicano tra di loro. La seguente immagine mostra la panoramica dell'archittettura della applicazione Zendesk realizzata(per la pagina degli amministratori la situazione è leggermente diversa). L'immagine descrive come un template viene caricato nel database NoSQL(database non relazionale) presente su Amazon. 
 \begin{figure}[!h] 
 	\centering 
@@ -174,11 +174,11 @@ Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, 
 	\item Le pagine appena caricate nei ifrmae leggono il token e il nome del sottodominio della piattaforma in cui si trovano utilizzando l'oggetto ZAFClient(descritto nel capitolo 2);
 	\item Utente crea un nuovo template e lo salva;
 	\item L'editor manda la richiesta all'API Gateway inviando nel header il token ed il nome del dominio;
-	\item API Gateway come prima cosa verifica il token ed il nome del sottodominio se sono validi. Se sono validi genera un evento che innesca una funzione lambda, altrimenti(token e nomedominio non validi) ritorna un messaggio d'errore;
+	\item API Gateway come prima cosa verifica il token ed il nome del sotto dominio se sono validi. Se sono validi genera un evento che innesca una funzione lambda, altrimenti(token e nome dominio non validi) ritorna un messaggio d'errore;
 	\item La funzione lambda riceve dati dall'evento generato da API Gateway. Utilizzando AWS-SDK interagisce con il database nosql e salva il nuovo item(template).
 	\item Funzione lambda ritorna un messaggio di successo;
 \end{itemize}
-\subsection{Archittetura pagina degli amministratori}
+\subsubsection{Architettura pagina degli amministratori}
 Il backend cambia leggermente per quanto riguarda la pagina degli amministratori di Nextep. Per accedere a questa pagina bisogna effettuare il login, il quale è stato implementato utilizzano il servizio Cognito che permette di gestire un pool di utenti in maniera molto semplice. La seguente immagine descrive il funzionamento di questa pagina. 
 \begin{figure}[!h] 
 	\centering 
@@ -193,3 +193,60 @@ Il backend cambia leggermente per quanto riguarda la pagina degli amministratori
 	\item L'utente ora può comunicare con l'API Gateway inviando il token ritornato da AWS Cognito. Questo token permette all'utente di inserire oppure eliminare uenti dal database NoSQL presente su AWS;
 	\item L'inserimento oppure l'eliminazione di un cliente esegue lo stesso flusso visto sopra per i template. Eccezione fatta per l'AWS Cognito, la pagina degli amministratori ha la stessa architettura.
 \end{itemize}
+\newpage
+\section{Codifica}
+
+Una volta progettata l’architettura 
+si passa all’effettiva implementazione dell'applicazione.
+ Per il mio progetto di stage questa attività è stata, come ci si aspettava dalla
+progettazione. Sono stati realizzati tutti i componenti definiti senza troppe difficoltà. 
+
+\subsection{Prodotto realizzato}
+\label{cap:progetto-terminato}
+Di seguito verrà spiegato in dettaglio come avviene l’interazione dell'utente Zendesk con l'applicazione
+Zendesk e dell'utente Nextep con la pagina degli amministratori.
+
+\subsubsection{Editor}
+Una volta installata l'applicazione sulla piattaforma Zendesk viene visualizzata automaticamente l'icona dell'applicazione nella sidebar della piattaforma. 
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=1.2\columnwidth]{editor} 
+	\caption{Editor realizzato }
+\end{figure}
+\begin{itemize}
+	\item L'utente può trascinare qualsiasi elemento presente nei "componenti" nel \emph{container} centrale;
+	\item Il \emph{container} visualizza a schermo il contenuto  HTML e CSS di ogni elemento trascinato in esso;
+	\item Facendo doppio click su qualsiasi elemento presente nel \emph{container} centrale è possibile modificare il suo contenuto oppure eliminarlo dal \emph{container};
+	\item Gli elementi nel \emph{container} possono essere ordinati in qualsiasi modo semplicemente facendo \emph{drag-and-drop};
+	\item E' possibile azzerare il contenuto del \emph{container} semplicemente cliccando il pulsante "Azzera";
+	\item Una volta realizzato il template desiderato l'utente può salvarlo cliccando il pulsante "Aggiungi". Verrà chiesto all'utente di inserire il nome del template, inserendo il nome valido il template verrà automaticamente salvato sul database NoSQL di Amazon;
+	\item A destra nell' "Elimina template" è possibile visualizzare tutti i template realizzati e se necessario eliminarli semplicemente cliccano sull'icona "X".  
+\end{itemize}
+\subsubsection{Widget} 
+Il widget permette all'agente di Zendesk di utilizzare i template realizzati nelle risposte verso clienti. 
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=1.2\columnwidth]{widget} 
+	\caption{Widget realizzato }
+\end{figure}
+\begin{itemize}
+	\item L'utente visualizza nel widget tutti i template realizzati;
+	\item L'utente può selezionare il template da utilizzare nella risposta;
+	\item Il template viene automaticamente aggiunto alla risposta. 
+\end{itemize}
+\newpage
+\subsubsection{Pagina di login}
+Nella immagine di seguito viene visualizzata il \emph{form} di login contenuto nella pagina di login. Una volta inseriti i dati corretti, viene automaticamente caricata la pagina degli amministratori. Se i dati inseriti non sono corretti, viene mostrato a schermo un messaggio di errore.
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.8\columnwidth]{login} 
+	\caption{Form login }
+\end{figure}
+\subsubsection{Pagina degli amministratori}
+Nella immagine di seguito viene visualizzata la pagina degli amministratori. In questa pagina è possibile aggiungere e rimuovere un cliente di Nextep che utilizza oppure andrà ad utilizzare l'applicazione CS-Template.
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=1.2\columnwidth]{admin} 
+	\caption{Pagina degli amministratori }
+\end{figure}
+
