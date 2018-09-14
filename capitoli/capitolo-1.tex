@@ -64,7 +64,7 @@ mobile, sviluppo di progetti di virtualizzazione, e storage networking. Inoltre 
 Nextep offre diversi tipi di servizi tra questi l'installazione e assistenza del portale di \emph{customer service} Zendesk. Guida le diverse società(piccole o grandi) verso la gestione dei proprio cliente in maniera semplice ed efficace. 
 %**************************************************************
 
-\section{Metologie utilizzate da Nextep}
+\section{Metodologia organizzativa utilizzate da Nextep}
 Pur avendo lavorato al progetto autonomamente, e quindi non direttamente insieme
 al personale, ho potuto constatare alcuni metodi utilizzati
 dall’azienda. 
@@ -82,9 +82,47 @@ l’azienda offre.
 	\includegraphics[width=0.8\columnwidth]{scrum} 
 	\caption{Logo di Nextep: immagine tratta dal sito dell’azienda}
 \end{figure}
+\newpage
+Secondo questa metologia il team è formato da: 
+\begin{itemize}
+	\item \textbf{Product owner:} responsabile della gestione dei product backlog e della
+	volontà degli stakeholder;
+	\item \textbf{Scrum master:} responsabile del team, si assicura che le regole di Scrum
+	vengano applicate e che il team sia il più produttivo possibile;
+	\item \textbf{Development team:} team con competenze tecniche, che lavora insieme per
+	completare l’incremento di uno sprint.
+\end{itemize}
+
+Dove gli artefatti dello Scrum sono: 
+\begin{itemize}
+	\item \textbf{Product Backlog:} lista ordinata, in base alle priorità, di tutti i requisiti che
+	il prodotto deve soddisfare;
+	\item \textbf{Sprint Backlog:} lista dei compiti, presi dal Product Backlog, che il team di
+	sviluppo deve completare nello sprint corrente;
+	\item \textbf{Increment:} somma di tutti i requisiti del Product Backlog che sono stati
+	completati.
+\end{itemize}
+
+Inoltre lo Scrum definisce diversi tipologie di riunioni, ogniuna con la durata diversa e con l'obbiettivo di organizzare il lavoro tra i membri del team. Nella azienda in questione, ogni giorno è previsto uno \emph{stand-up meeting} all’interno dei vari team di
+lavoro, per allineare ogni componente sulla situazione corrente e su come procedere. 
 
 
+\section{Principali strumenti utilizzati da Nextep}
+Come cenato prima, l'azienda si occupa princiaplamente delle applicazione web. La realizzazione delle applicazione viene fatto utilizzando i CMS di PHP, come:
+\begin{itemize}
 
+	\item \textbf{Drupal:} una piattaforma software, flessibile e scalabile, per la creazione e pubblicazione
+	di siti web, e per la condivisione di contenuti in più linguaggi su
+	dispositivi diversi;
+		\item \textbf{Wordpress:} un'altra piattaforma software, che consente la creazione e
+	distribuzione di siti web facilmente gestibili ed aggiornabili in maniera dinamica.
+\end{itemize}
+
+Per quanto riguarda controllo del versionamento e CI/CD(\emph{continuous integration and delivery}) l 'azienda utlizzata Git e Gitlab (descritti in detaglio nel capitolo 3).
+\\
+
+Per quanto riguarda la gestione dei ticketing viene adoperato Jira, un software proprietario per l’issue tracking, bug tracking
+e con funzioni di gestione del progetto.
 \section{Lo stage}
 Il progetto di stage è consistito principalmente nella realizzazione di una applicazione per la piattaforma di \emph{customer service} Zendesk. La piattaforma Zendesk permette a un'aziedna di gestire tutte le richieste(chiamate \emph{tickets}) di propri clienti in unico posto. \\ L'applicazione realizzata permette agli agenti(persone che gestiscono le richieste dei clienti) e agli amministratori di Zendesk di realizzare contenuti(chiamati template) HTML e CSS in maniera molto semplice e veloce, ovvero utilizzando un editor \emph{drag-and-drop}. I template successivamente sono utilizzati nelle risposte verso i clienti. Questo permette di risparmiare una notevole quantità di tempo e non è necessario avere le conoscenze di HTML e CSS. Diverse aziende(clienti di Nextep) hanno fatta la richiesta esplicitamente di tale applicazione. .
 \\
