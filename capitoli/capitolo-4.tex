@@ -183,25 +183,28 @@ Una delle cose molto interessanti di questo editor è quello di avere Git già i
 ZAF è un semplice \emph{framework} sviluppato da Zendesk Inc. Permette di integrare nella piattaforma Zendesk applicazione web realizzata con qualsiasi tecnologia web. 
 \\
 
-Questo framework genera dei package che rappresentano un app di Zendesk.
-Take package può essere installato sulla propria piattaforma Zendesk come una applicazione privata oppure caricata(gratuitamente o a pagamento) sul Market place di Zendesk rendendola cosi disponibile a tutti gli utenti nel mondo. Il package è formato da un file JSON(manifest.json) e una cartella assets. La cartella contiene le icone da visualizzare dopo l'installazione dell'applicazione sulla piattaforma, mentre il file manifest.json contiene tutte le informazioni riguardo l'applicazione. Il seguente codice mostra la struttura generale di un semplice file manifest.json. \\
+Questo framework genera un package che rappresenta un'app di Zendesk.
+Tale package può essere installato sulla propria piattaforma Zendesk come una applicazione privata oppure caricata(gratuitamente o a pagamento) sul marketplace di Zendesk rendendola cosi disponibile a tutti gli utenti nel mondo. Il package è formato da un file \glspl{JSON}(manifest.json) e una cartella assets. La cartella contiene le icone da visualizzare dopo l'installazione dell'applicazione sulla piattaforma, mentre il file manifest.json contiene tutte le informazioni riguardo l'applicazione. Il seguente codice mostra la struttura generale di un semplice file manifest.json. \\
 \begin{lstlisting}
-{
-"name": "CS-Template",
-"author": {
-"name": "Singh Parwinder",
-"email": "mio@email.com",
-},
-"location": {
-"ticket_sidebar":  "https://www.paginaweb.org"
-},	
-"parameters": [
-{
-"name": "token",
-"type": "text",
-"required": true
-}]
-}
+{[
+	...
+	{
+	 "name": "CS-Template",
+	 "author": {
+	 "name": "Singh Parwinder",
+	 "email": "mio@email.com",
+	},
+	 "location": {
+	 "ticket_sidebar":  "https://www.paginaweb.org"
+	},	
+	 "parameters": [
+	{
+	 "name": "token",
+	 "type": "text",
+	 "required": true
+	}
+]}
+
 \end{lstlisting}
 L'attributo "location" è quello più importante. Questo attributo specifica dove visualizzare l'applicazione sulla piattaforma dopo l'installazione. Si ha la possibilità di scegliere tra più di dieci posizioni differenti, e per ogni posizione specificata bisogna indicare l'indirizzo web della pagina da visualizzare. Quindi in parole povere queste posizioni sono dei semplici \gls{iframe} che mostrano le pagine web presenti su un server remoto.   Per questo motivo le applicazioni possono essere realizzate con qualsiasi tecnologia web. 
 \\

@@ -10,7 +10,7 @@
  \begin{figure}[!h] 
  	\centering 
  	\includegraphics[width=1.2\columnwidth]{piani} 
- 	\caption{Diagramma Gantt piano dei stage confermato}
+ 	\caption{Diagramma Gantt piano di stage confermato}
  \end{figure}
 Per raggiungere gli obiettivi pianificati nel piano di stage e rispettare i
 requisiti imposti dall’Università, io e il tutor aziendale abbiamo
@@ -24,7 +24,7 @@ Le fasi individuate dal piano di studio sono:
 \begin{itemize}
 	\item \textbf{FASE 1 - Analisi dei requisiti e la formazione tecnica:} durante questa prima fase, dopo diversi incontri con il tutor aziendale verranno definiti tutti i requisiti da soddisfare e le tecnologie da utilizzare al fine di raggiungere l'obiettivo prefissato. Una volta definiti questi concetti, inizierà la formazione e la realizzazione di un semplice \emph{proof of concept}, che andrà a dimostrare quanto imparato e soprattutto la fattibilità dell'applicazione;
 	\item \textbf{FASE 2 - La progettazione:} dopo aver individualizzato tutti i requisiti da soddisfare, imparato almeno per una buona parte le tecnologie da utilizzare e realizzato un semplice\emph{ proof of concept}, verrà definita tutta la progettazione architetturale dell'applicazione finale;
-		\item \textbf{FASE 4 - Implementazione:} questa fase consiste nella codifica di quanto progettato. E' la fase con la durata più lunga. Tutta l'applicazione deve essere sviluppata in questa fase sia per quanto riguarda il lato frontend che quello backend;
+		\item \textbf{FASE 3 - Implementazione:} questa fase consiste nella codifica di quanto progettato. E' la fase con la durata più lunga. Tutta l'applicazione deve essere sviluppata in questa fase sia per quanto riguarda il lato frontend che quello backend;
 		\item \textbf{FASE 4 - Validazione requisiti e stesura documentazione:} l'ultima fase della pianificazione di durata circa una settimana consiste nel verificare che il \emph{software} realizzato soddisfi tutti i requisiti
 			del progetto di stage. Inoltre nello stesso periodo viene redatto la documentazione tecnica, atta a descrivere il progetto realizzato.
 \end{itemize}
@@ -39,7 +39,7 @@ Di seguito vengono illustrate le strategie di progettazione adottate per la real
 \subsection{Progettazione Frontend}
 \label{sec:progettazione}
 Come prima cosa sono stati realizzati utilizzando \emph{Figma} i prototipi delle pagine da creare. In questo modo è stato possibile capire sin da subito la struttura delle pagine, rendendo cosi molto semplice la progettazione architetturale di tale pagine.
-\subsubsection{Pagina cotenente l'editor}
+\subsubsection{Pagina contenente l'editor}
 Questa pagina contiene l'editor \emph{drag and drop}. Per creare la struttura di questa pagina sono stati studiati diversi editor online che forniscono le stesse funzionalità(in diversi contesti). Dopo una attenta analisi delle strutture dei diversi editor online è stato concepita la seguente struttura:
 \begin{figure}[!h] 
 	\centering 
@@ -54,7 +54,7 @@ Questa pagina contiene l'editor \emph{drag and drop}. Per creare la struttura di
 	\item Il contenitore a destra dovrà contenere tutti i template realizzati dagli utenti. Quindi esso contiene semplicemente una lista di tutti i template.  
 \end{itemize}
 
-\subsubsection{Pagina contenente il widget} Questa pagina contiene una semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei \emph{tickets}, in modo che essi posono essere scelti dagli agenti di Zendesk.
+\subsubsection{Pagina contenente il widget} Questa pagina contiene una semplice lista che dovrà contenere tutti i template da visualizzare nella pagina dei \emph{tickets}, in modo che essi possono essere scelti dagli agenti di Zendesk.
 \\ 
 \subsubsection{Pagina login}
 Semplice pagina contenete il \emph{form} per il login. Una volta inseriti i valori validi l'utente sarà utenticato come amministratore, caricandoli cosi la pagina degli amministratori. 
@@ -151,7 +151,7 @@ Nel contesto dell'applicazione gli atomi e le molecole sono rappresentate dagli 
 	\includegraphics[width=0.8\columnwidth]{prog/angular} 
 	\caption{Componenti Angular Material che formano gli atomi e le molecole dell'applicazione}
 \end{figure} 
-
+\newpage
 \textbf{Gli organismi:} sono dei componenti più o meno complessi, composti da gruppi di molecole e/o atomi e/o altri organismi. Questi organismi creano diverse sezioni all'interno della nostra interfaccia. Un esempio può essere un menu di navigazione, che è formato in media da diversi pulsanti/link. 
 \\
 
@@ -161,7 +161,7 @@ Nel contesto dell'applicazione gli atomi e le molecole sono rappresentate dagli 
 \textbf{Le pagine:} sono dei templates riempiti di contenuto reale, come immagini, testi, elementi grafici, advertising, ecc. Una pagina quindi è formata da molti template. 
 \newpage
 \subsection{Progettazione Backend}
-\subsubsection{Archittetura a microservizi serverless}
+\subsubsection{Archittetura serverless}
 Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, i servizi scelti sono stati descritti nel capitolo 2. In questa sezione viene descritto come questi servizi comunicano tra di loro. La seguente immagine mostra la panoramica dell'archittettura della applicazione Zendesk realizzata(per la pagina degli amministratori la situazione è leggermente diversa). L'immagine descrive come un template viene caricato nel database NoSQL(database non relazionale) presente su Amazon. 
 \begin{figure}[!h] 
 	\centering 
@@ -171,12 +171,12 @@ Il backend dell'applicazione è realizzato utilizzando i servizi web di Amazon, 
 \\
 \begin{itemize}
 	\item Zendesk User interagisce con l'applicazione tramite l'interfaccia di Zendesk;
-	\item Le pagine dell'applicazione Angular sono caricate da CloudFront sui iframe presenti su Zendesk;
-	\item Le pagine appena caricate nei ifrmae leggono il token e il nome del sottodominio della piattaforma in cui si trovano utilizzando l'oggetto ZAFClient(descritto nel capitolo 2);
+	\item Le pagine dell'applicazione Angular sono caricate da CloudFront sugli iframe presenti su Zendesk;
+	\item Le pagine appena caricate negli iframe leggono il token e il nome del sotto dominio della piattaforma in cui si trovano utilizzando l'oggetto ZAFClient(descritto nel capitolo 2);
 	\item Utente crea un nuovo template e lo salva;
-	\item L'editor manda la richiesta all'API Gateway inviando nel header il token ed il nome del dominio;
-	\item API Gateway come prima cosa verifica il token ed il nome del sotto dominio se sono validi. Se sono validi genera un evento che innesca una funzione lambda, altrimenti(token e nome dominio non validi) ritorna un messaggio d'errore;
-	\item La funzione lambda riceve dati dall'evento generato da API Gateway. Utilizzando AWS-SDK interagisce con il database nosql e salva il nuovo item(template).
+	\item L'editor manda la richiesta all'API Gateway, inviando nel header della richiesta il token e il nome del dominio in cui si trova;
+	\item API Gateway come prima cosa verifica il token e il nome del sotto dominio se sono validi. Se sono validi genera un evento che innesca una funzione lambda, altrimenti(token e nome dominio non validi) ritorna un messaggio d'errore;
+	\item La funzione lambda riceve dati dall'evento generato dall'API Gateway. Utilizzando AWS-SDK interagisce con il database NoSQL e salva il nuovo item(template).
 	\item Funzione lambda ritorna un messaggio di successo;
 \end{itemize}\newpage
 \subsubsection{Architettura pagina degli amministratori}
@@ -191,7 +191,7 @@ Il backend cambia leggermente per quanto riguarda la pagina degli amministratori
 	\item L'utente inserisce le sue credenziali corrette per effettuare il login;
 	\item AWS Cognito verifica le credenziali, se sono valide ritorna il token di accesso altrimenti un errore;
 	\item Le credenziali sono valide, l'utente accede alla pagina degli amministratori;
-	\item L'utente ora può comunicare con l'API Gateway inviando il token ritornato da AWS Cognito. Questo token permette all'utente di inserire oppure eliminare uenti dal database NoSQL presente su AWS;
+	\item L'utente ora può comunicare con l'API Gateway inviando il token ritornato da AWS Cognito. Questo token permette all'utente di inserire oppure eliminare utenti dal database NoSQL presente su AWS;
 	\item L'inserimento oppure l'eliminazione di un cliente esegue lo stesso flusso visto sopra per i template. Eccezione fatta per l'AWS Cognito, la pagina degli amministratori ha la stessa architettura.
 \end{itemize}
 \newpage
@@ -236,14 +236,14 @@ Il widget permette all'agente di Zendesk di utilizzare i template realizzati nel
 \end{itemize}
 \newpage
 \subsubsection{Pagina di login}
-Nella immagine di seguito viene visualizzata il \emph{form} di login contenuto nella pagina di login. Una volta inseriti i dati corretti, viene automaticamente caricata la pagina degli amministratori. Se i dati inseriti non sono corretti, viene mostrato a schermo un messaggio di errore.
+Nell'immagine di seguito viene visualizzato il \emph{form} di login contenuto nella pagina di login. Una volta inseriti i dati corretti, viene automaticamente caricata la pagina degli amministratori. Se i dati inseriti non sono corretti, viene mostrato a schermo un messaggio di errore.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=0.8\columnwidth]{login} 
 	\caption{Form login }
 \end{figure}
 \subsubsection{Pagina degli amministratori}
-Nella immagine di seguito viene visualizzata la pagina degli amministratori. In questa pagina è possibile aggiungere e rimuovere un cliente di Nextep che utilizza oppure andrà ad utilizzare l'applicazione CS-Template.
+Nell'immagine di seguito viene visualizzata la pagina degli amministratori. In questa pagina è possibile aggiungere e rimuovere un cliente di Nextep che utilizza oppure andrà ad utilizzare l'applicazione CS-Template.
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=1.2\columnwidth]{admin} 
